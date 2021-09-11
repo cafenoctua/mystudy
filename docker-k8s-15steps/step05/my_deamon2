@@ -1,0 +1,29 @@
+# カウンタの初期化
+COUNT=0
+
+# 環境変数がなければセット
+if [ -z "$INTERVAL" ]; then
+    INTERVAL=3
+fi
+
+# 起動時に状態取得
+if [ -f save.dat ]; then
+    COUNT=`cat save.dat`
+    rm -f save.dat
+fi
+
+# SIGTERM受信時処理
+save() {
+    echo $COUNT > save.dat
+    exit 0
+}
+trap save TERM ## シグナルハンドラー定義、SIGTERMを受信するとsave()を割り込み処理する
+
+# メインループ
+while [ true ];
+do
+    TM=`date|awk '{print $4}'`
+    printf "%s : %s \n" $TM $COUNT
+    let COUNT=COUNT+1
+    sleep $INTERVAL
+done

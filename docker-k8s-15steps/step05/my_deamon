@@ -1,0 +1,16 @@
+# カウンタの初期化
+COUNT=0
+
+# 環境変数がなければセット
+if [ -z "$INTERVAL" ]; then
+    INTERVAL=3
+fi
+
+# メインループ
+while [ true ];
+do
+    TM=`date|awk '{print $4}'`
+    printf "%s : %s \n" $TM $COUNT
+    let COUNT=COUNT+1
+    sleep $INTERVAL
+done

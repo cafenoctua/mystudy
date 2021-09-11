@@ -1,0 +1,4 @@
+FROM alpine:latest
+RUN apk update && apk add bash
+ADD ./my_deamon1 /my_deamon
+CMD ["/bin/bash", "/my_deamon"]

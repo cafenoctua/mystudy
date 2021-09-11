@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webapl
+spec:
+  containers:
+  - name: webapl
+    image: brubian/webapl:0.1
+    livenessProbe:
+      httpGet:
+        path: /helthz
+        port: 3000
+      initialDelaySeconds: 3 # 初回起動から探査開始までの猶予時間
+      periodSeconds: 5       # チェック間隔
+    readinessProbe:          # 準備状態ブローブに対するハンドラー設定
+      httpGet:
+        path: /ready
+        port: 3000
+      initialDelaySeconds: 15
+      periodSeconds: 6

@@ -1,0 +1,8 @@
++example:
+  sh>: test.sh
+  _check:
+    +succeed:
+      echo>: success
+  _error:
+    +failed:
+      echo>: fail

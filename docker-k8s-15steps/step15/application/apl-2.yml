@@ -1,0 +1,38 @@
+#
+# 内部用マイクロサービス 模擬
+#
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-apl2-rest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      apl: web-apl2-rest
+  template:
+    metadata:
+      labels:
+        apl: web-apl2-rest
+    spec:
+      containers:
+      - image: maho/webapl3
+        name: rest-server-c
+        ports:
+          - containerPort: 80
+---
+#
+# 内部マイクロサービス用
+#
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-apl2-rest
+spec:
+  ##type: NodePort 
+  type: ClusterIP
+  selector:
+    apl: web-apl2-rest
+  ports:
+  - port: 80
+    protocol: TCP

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: session-deployment
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: session
+  template:
+    metadata:
+      labels:
+        app: session
+    spec:
+      containers:
+        - image: 'brubian/session-test:1.1'
+          name: session
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: session-svc
+spec:
+  selector:
+    app: session
+  ports:
+    - port: 9080
+      targetPort: 80

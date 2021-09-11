@@ -1,0 +1,4 @@
++example:
+  loop>: 3
+  _do:
+    echo>: this is ${i}th loop
