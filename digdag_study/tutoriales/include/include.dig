@@ -1,0 +1,5 @@
++task1:
+  !include : 'task1.dig'
+
++task2:
+  !include : 'task2.dig'

@@ -1,0 +1,5 @@
++print_my_var1:
+  sh>: echo my_var1:${my_var1}
+
++print_my_var2:
+  sh>: echo my_var2:${my_var2}

@@ -1,0 +1,8 @@
++example:
+  sh>: exit 1
+  _check:
+    +succed:
+      echo>: success
+  _error:
+    +failed:
+      echo>: fail

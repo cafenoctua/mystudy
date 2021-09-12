@@ -1,0 +1,8 @@
+timezone: Asia/Tokyo
+
+schedule:
+  minutes_interval>: 1
+  skip_on_overtime: true
+
++step1:
+  sh>: sleep 61; echo run ${session_time}

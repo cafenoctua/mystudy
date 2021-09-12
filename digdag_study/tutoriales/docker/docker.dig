@@ -1,0 +1,7 @@
+_export:
+  docker:
+    image: python:3.6
+    pull_allways: true
+    
++step1:
+  py>: hello.hello

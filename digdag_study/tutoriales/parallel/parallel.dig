@@ -1,0 +1,15 @@
+# _parallel: true
++prepare:
+  # _parallel: true
+  
+  +data1:
+    sh>: echo data1
+
+  +data2:
+    _background: true
+    sh>: echo data2
+
+  +data3:
+    sh>: echo data3
++analyze:
+  sh>: echo analyze

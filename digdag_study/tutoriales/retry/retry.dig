@@ -1,0 +1,8 @@
++prepare:
+  _retry: 
+    limit: 3
+    interval: 5
+    interval_type: constant
+    
+  +step1:
+    sh>: exit 1

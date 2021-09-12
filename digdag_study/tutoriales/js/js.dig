@@ -1,0 +1,13 @@
+timezone: Asia/Tokyo
+
++format_session_time:
+  echo>: ${moment(session_time).format("YYYY-MM-DD HH:mm:ss Z")}
+
++format_in_utc:
+  echo>: ${moment(session_time).utc().format("YYYY-MM-DD HH:mm:ss")}
+
++format_tomorrow:
+  echo>: ${moment(session_time).add(1, 'days').format("LLL")}
+
++get_execution_time:
+  echo>: ${moment().format("YYYY-MM-DD HH:mm:ss Z")}

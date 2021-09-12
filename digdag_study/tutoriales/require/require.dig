@@ -1,0 +1,5 @@
++step1:
+  require>: another_workflow
+  # echo>: step1
++step3:
+  echo>: step3
