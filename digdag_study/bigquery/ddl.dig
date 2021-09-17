@@ -1,0 +1,13 @@
+_export:
+  bq:
+    dataset: my_dataset
+
++prepare:
+  bq_ddl>:
+  empty_datasets:
+    - my_dataset
+
++prepare2:
+    bq_ddl>:
+    empty_tables:
+      - my_tables

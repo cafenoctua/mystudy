@@ -1,0 +1,12 @@
+_export:
+  bq:
+    dataset: test
+
+# +prepare:
+#   bq_ddl>:
+#     create_datasets:
+#       - test
++prepare2:
+  bq_ddl>:
+    create_tables:
+      - test_${session_date_compact}

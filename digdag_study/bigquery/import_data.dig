@@ -1,0 +1,16 @@
+_export:
+  bq:
+    dataset: my_dataset
+
++ingest:
+  bq_load>: gs://digdag_test/result.csv.gz
+  destination_table: my_dataset.my_data_gz
+  source_format: CSV
+  skip_leading_rows: 1
+  schema: schema/customer.yaml
+  write_disposition: WRITE_TRUNCATE
+
++process:
+  bq>: queries/process.sql
+  destination_table: my_dataset.my_result
+  write_disposition: WRITE_TRUNCATE

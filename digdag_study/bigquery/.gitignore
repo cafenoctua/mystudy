@@ -1,0 +1,5 @@
+/.digdag-wrapper
+.digdag
+*.pyc
+bq-cred.json
+digdag.json

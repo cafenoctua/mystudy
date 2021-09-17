@@ -1,0 +1,13 @@
+_export:
+  bq:
+    dataset: sample
+
++process:
+  bq>: queries/step2.sql
+  destination_table: result
+  write_disposition: WRITE_TRUNCATE
+
++export:
+  bq_extract>: result
+  destination: gs://digdag_test/result.csv.gz
+  compression: GZIP
