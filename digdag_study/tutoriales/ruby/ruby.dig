@@ -1,0 +1,9 @@
+_export:
+  rb:
+    require: 'tasks/my_workflow'
+
++step1:
+  rb>: MyWorkflow.step1
+
++step2:
+  rb>: MyWorkflow.step2

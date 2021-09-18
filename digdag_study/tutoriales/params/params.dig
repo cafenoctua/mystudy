@@ -1,0 +1,15 @@
+_export:
+  foo: 1
+  bar: 1
+
++prepare:
+  sh>: echo foo:${foo} bar:${bar}
+
++analyze:
+  _export:
+    bar: 2
+  +step1:
+    sh>: echo foo:${foo} bar:${bar}
+
++dump:
+  sh>: echo foo:${foo} bar:${bar}

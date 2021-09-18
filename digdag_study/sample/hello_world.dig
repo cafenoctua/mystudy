@@ -1,4 +1,4 @@
 timezone: UTC
 
-+step2:
-  py>: tasks.MyWorkflow.my_task
++step1:
+  py>: hello.hello1

@@ -1,0 +1,20 @@
+timezone: UTC
+
++setup:
+  echo>: start ${session_time}
+
++disp_current_date:
+  echo>: ${moment(session_time).utc().format('YYYY-MM-DD HH:mm:ss Z')}
+
++repeat:
+  for_each>:
+    order: [first, second, third]
+    animal: [dog, cat]
+    number: [1,2,3]
+  _do:
+    echo>: ${order} ${animal} ${number}
+  # _parallel: true
+
++teardown:
+  echo>: finish ${session_time}
+
