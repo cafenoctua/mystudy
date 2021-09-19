@@ -1,0 +1,12 @@
+version: '3'
+services:
+  # Update this to the name of the service you want to work with in your docker-compose.yml file
+  digdag:
+    build:
+        context: .
+        dockerfile: Dockerfile.dev
+    volumes: 
+      - ./project:/work
+    ports:
+      - 65432:65432
+    command: /bin/sh -c "while sleep 1000; do :; done"
