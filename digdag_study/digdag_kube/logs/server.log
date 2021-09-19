@@ -1,0 +1,240 @@
+2021-09-19 17:17:24.537 +0900 [INFO] (main): HikariPool-1 - Started.
+2021-09-19 17:17:24.567 +0900 [INFO] (main): HikariPool-1 - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc.PgConnection.getNetworkTimeout() is not yet implemented.)
+2021-09-19 17:17:24.599 +0900 [INFO] (main): secret encryption engine: disabled
+2021-09-19 17:17:24.636 +0900 [INFO] (main): Applying database migration:20151204221156
+2021-09-19 17:17:24.862 +0900 [INFO] (main): Applying database migration:20160602123456
+2021-09-19 17:17:24.877 +0900 [INFO] (main): Applying database migration:20160602184025
+2021-09-19 17:17:24.905 +0900 [INFO] (main): Applying database migration:20160610154832
+2021-09-19 17:17:24.913 +0900 [INFO] (main): Applying database migration:20160623123456
+2021-09-19 17:17:24.919 +0900 [INFO] (main): Applying database migration:20160719172538
+2021-09-19 17:17:24.953 +0900 [INFO] (main): Applying database migration:20160817123456
+2021-09-19 17:17:24.964 +0900 [INFO] (main): Applying database migration:20160818043815
+2021-09-19 17:17:24.967 +0900 [INFO] (main): Applying database migration:20160818220026
+2021-09-19 17:17:24.982 +0900 [INFO] (main): Applying database migration:20160908175551
+2021-09-19 17:17:24.989 +0900 [INFO] (main): Applying database migration:20160926123456
+2021-09-19 17:17:24.994 +0900 [INFO] (main): Applying database migration:20160928203753
+2021-09-19 17:17:25.001 +0900 [INFO] (main): Applying database migration:20161005225356
+2021-09-19 17:17:25.004 +0900 [INFO] (main): Applying database migration:20161028112233
+2021-09-19 17:17:25.009 +0900 [INFO] (main): Applying database migration:20161110112233
+2021-09-19 17:17:25.014 +0900 [INFO] (main): Applying database migration:20161209001857
+2021-09-19 17:17:25.022 +0900 [INFO] (main): Applying database migration:20170116082921
+2021-09-19 17:17:25.024 +0900 [INFO] (main): Applying database migration:20170116090744
+2021-09-19 17:17:25.030 +0900 [INFO] (main): Applying database migration:20170223220127
+2021-09-19 17:17:25.040 +0900 [INFO] (main): Applying database migration:20190318175338
+2021-09-19 17:17:25.047 +0900 [INFO] (main): Applying database migration:20191105105927
+2021-09-19 17:17:25.054 +0900 [INFO] (main): Applying database migration:20200716114008
+2021-09-19 17:17:25.061 +0900 [INFO] (main): Applying database migration:20200803184355
+2021-09-19 17:17:25.066 +0900 [INFO] (main): 23 migrations applied.
+2021-09-19 17:17:25.150 +0900 [INFO] (main): XNIO version 3.3.8.Final
+2021-09-19 17:17:25.156 +0900 [INFO] (main): XNIO NIO Implementation Version 3.3.8.Final
+2021-09-19 17:17:25.171 +0900 [INFO] (main): Starting server on 127.0.0.1:65432
+2021-09-19 17:17:25.204 +0900 [INFO] (main): Bound on 127.0.0.1:65432 (api)
+2021-09-19 17:24:46.161 +0900 [INFO] (shutdown): Started shutdown process
+2021-09-19 17:24:46.162 +0900 [INFO] (shutdown): Shutting down workflow executor loop
+2021-09-19 17:24:46.164 +0900 [INFO] (shutdown): Closing HTTP listening sockets
+2021-09-19 17:24:46.165 +0900 [INFO] (shutdown): Waiting for completion of running HTTP requests...
+2021-09-19 17:24:46.165 +0900 [INFO] (shutdown): Shutting down HTTP worker threads
+2021-09-19 17:24:46.166 +0900 [INFO] (shutdown): Shutting down system
+2021-09-19 17:24:46.170 +0900 [INFO] (shutdown): HikariPool-1 - Close initiated...
+2021-09-19 17:24:51.172 +0900 [INFO] (shutdown): HikariPool-1 - Closed.
+2021-09-19 17:24:51.173 +0900 [INFO] (shutdown): Shutdown completed
+2021-09-19 17:27:06.094 +0900 [INFO] (main): HikariPool-1 - Started.
+2021-09-19 17:27:06.118 +0900 [INFO] (main): HikariPool-1 - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc.PgConnection.getNetworkTimeout() is not yet implemented.)
+2021-09-19 17:27:06.150 +0900 [INFO] (main): secret encryption engine: disabled
+2021-09-19 17:27:06.235 +0900 [INFO] (main): XNIO version 3.3.8.Final
+2021-09-19 17:27:06.240 +0900 [INFO] (main): XNIO NIO Implementation Version 3.3.8.Final
+2021-09-19 17:27:06.252 +0900 [INFO] (main): Starting server on 127.0.0.1:65432
+2021-09-19 17:27:06.271 +0900 [INFO] (main): Bound on 127.0.0.1:65432 (api)
+2021-09-19 17:37:05.303 +0900 [INFO] (shutdown): Started shutdown process
+2021-09-19 17:37:05.304 +0900 [INFO] (shutdown): Shutting down workflow executor loop
+2021-09-19 17:37:05.305 +0900 [INFO] (shutdown): Closing HTTP listening sockets
+2021-09-19 17:37:05.305 +0900 [INFO] (shutdown): Waiting for completion of running HTTP requests...
+2021-09-19 17:37:05.306 +0900 [INFO] (shutdown): Shutting down HTTP worker threads
+2021-09-19 17:37:05.306 +0900 [INFO] (shutdown): Shutting down system
+2021-09-19 17:37:05.307 +0900 [INFO] (shutdown): HikariPool-1 - Close initiated...
+2021-09-19 17:37:10.310 +0900 [INFO] (shutdown): HikariPool-1 - Closed.
+2021-09-19 17:37:10.311 +0900 [INFO] (shutdown): Shutdown completed
+2021-09-19 17:37:31.803 +0900 [INFO] (main): HikariPool-1 - Started.
+2021-09-19 17:37:31.818 +0900 [INFO] (main): HikariPool-1 - Close initiated...
+2021-09-19 17:37:31.819 +0900 [INFO] (main): HikariPool-1 - Closed.
+2021-09-19 17:37:31.821 +0900 [INFO] (main): HikariPool-2 - Started.
+2021-09-19 17:37:31.823 +0900 [INFO] (main): HikariPool-2 - Close initiated...
+2021-09-19 17:37:31.823 +0900 [INFO] (main): HikariPool-2 - Closed.
+2021-09-19 17:37:31.824 +0900 [INFO] (main): HikariPool-3 - Started.
+2021-09-19 17:37:31.827 +0900 [INFO] (main): HikariPool-3 - Close initiated...
+2021-09-19 17:37:31.827 +0900 [INFO] (main): HikariPool-3 - Closed.
+2021-09-19 17:37:31.828 +0900 [INFO] (main): HikariPool-4 - Started.
+2021-09-19 17:37:31.830 +0900 [INFO] (main): HikariPool-4 - Close initiated...
+2021-09-19 17:37:31.830 +0900 [INFO] (main): HikariPool-4 - Closed.
+2021-09-19 17:37:31.831 +0900 [INFO] (main): HikariPool-5 - Started.
+2021-09-19 17:37:31.833 +0900 [INFO] (main): HikariPool-5 - Close initiated...
+2021-09-19 17:37:31.833 +0900 [INFO] (main): HikariPool-5 - Closed.
+2021-09-19 17:37:31.834 +0900 [INFO] (main): HikariPool-6 - Started.
+2021-09-19 17:37:31.836 +0900 [INFO] (main): HikariPool-6 - Close initiated...
+2021-09-19 17:37:31.836 +0900 [INFO] (main): HikariPool-6 - Closed.
+2021-09-19 17:37:31.839 +0900 [INFO] (main): HikariPool-7 - Started.
+2021-09-19 17:37:31.841 +0900 [INFO] (main): HikariPool-7 - Close initiated...
+2021-09-19 17:37:31.842 +0900 [INFO] (main): HikariPool-7 - Closed.
+2021-09-19 17:37:31.842 +0900 [INFO] (main): HikariPool-8 - Started.
+2021-09-19 17:37:31.845 +0900 [INFO] (main): HikariPool-8 - Close initiated...
+2021-09-19 17:37:31.845 +0900 [INFO] (main): HikariPool-8 - Closed.
+2021-09-19 17:37:31.846 +0900 [INFO] (main): HikariPool-9 - Started.
+2021-09-19 17:37:31.848 +0900 [INFO] (main): HikariPool-9 - Close initiated...
+2021-09-19 17:37:31.848 +0900 [INFO] (main): HikariPool-9 - Closed.
+2021-09-19 17:37:31.862 +0900 [INFO] (main): HikariPool-10 - Started.
+2021-09-19 17:37:31.865 +0900 [INFO] (main): HikariPool-10 - Close initiated...
+2021-09-19 17:37:31.865 +0900 [INFO] (main): HikariPool-10 - Closed.
+2021-09-19 17:37:31.866 +0900 [INFO] (main): HikariPool-11 - Started.
+2021-09-19 17:37:31.868 +0900 [INFO] (main): HikariPool-11 - Close initiated...
+2021-09-19 17:37:31.868 +0900 [INFO] (main): HikariPool-11 - Closed.
+2021-09-19 17:37:31.872 +0900 [INFO] (main): secret encryption engine: disabled
+2021-09-19 17:37:31.872 +0900 [INFO] (main): HikariPool-12 - Started.
+2021-09-19 17:37:31.874 +0900 [INFO] (main): HikariPool-12 - Close initiated...
+2021-09-19 17:37:31.874 +0900 [INFO] (main): HikariPool-12 - Closed.
+2021-09-19 17:37:31.876 +0900 [INFO] (main): HikariPool-13 - Started.
+2021-09-19 17:37:31.878 +0900 [INFO] (main): HikariPool-13 - Close initiated...
+2021-09-19 17:37:31.878 +0900 [INFO] (main): HikariPool-13 - Closed.
+2021-09-19 17:37:31.879 +0900 [INFO] (main): HikariPool-14 - Started.
+2021-09-19 17:37:31.881 +0900 [INFO] (main): HikariPool-14 - Close initiated...
+2021-09-19 17:37:31.881 +0900 [INFO] (main): HikariPool-14 - Closed.
+2021-09-19 17:37:31.882 +0900 [INFO] (main): HikariPool-15 - Started.
+2021-09-19 17:37:31.885 +0900 [INFO] (main): HikariPool-15 - Close initiated...
+2021-09-19 17:37:31.885 +0900 [INFO] (main): HikariPool-15 - Closed.
+2021-09-19 17:37:31.887 +0900 [INFO] (main): HikariPool-16 - Started.
+2021-09-19 17:37:31.890 +0900 [INFO] (main): HikariPool-16 - Close initiated...
+2021-09-19 17:37:31.890 +0900 [INFO] (main): HikariPool-16 - Closed.
+2021-09-19 17:37:31.890 +0900 [INFO] (main): HikariPool-17 - Started.
+2021-09-19 17:37:31.892 +0900 [INFO] (main): HikariPool-17 - Close initiated...
+2021-09-19 17:37:31.893 +0900 [INFO] (main): HikariPool-17 - Closed.
+2021-09-19 17:37:31.893 +0900 [INFO] (main): HikariPool-18 - Started.
+2021-09-19 17:37:31.896 +0900 [INFO] (main): HikariPool-18 - Close initiated...
+2021-09-19 17:37:31.896 +0900 [INFO] (main): HikariPool-18 - Closed.
+2021-09-19 17:37:31.897 +0900 [INFO] (main): HikariPool-19 - Started.
+2021-09-19 17:37:31.899 +0900 [INFO] (main): HikariPool-19 - Close initiated...
+2021-09-19 17:37:31.899 +0900 [INFO] (main): HikariPool-19 - Closed.
+2021-09-19 17:37:31.900 +0900 [INFO] (main): HikariPool-20 - Started.
+2021-09-19 17:37:31.902 +0900 [INFO] (main): HikariPool-20 - Close initiated...
+2021-09-19 17:37:31.902 +0900 [INFO] (main): HikariPool-20 - Closed.
+2021-09-19 17:37:31.903 +0900 [INFO] (main): HikariPool-21 - Started.
+2021-09-19 17:37:31.905 +0900 [INFO] (main): HikariPool-21 - Close initiated...
+2021-09-19 17:37:31.905 +0900 [INFO] (main): HikariPool-21 - Closed.
+2021-09-19 17:37:31.906 +0900 [INFO] (main): HikariPool-22 - Started.
+2021-09-19 17:37:31.908 +0900 [INFO] (main): HikariPool-22 - Close initiated...
+2021-09-19 17:37:31.908 +0900 [INFO] (main): HikariPool-22 - Closed.
+2021-09-19 17:37:31.911 +0900 [INFO] (main): HikariPool-23 - Started.
+2021-09-19 17:37:31.913 +0900 [INFO] (main): HikariPool-23 - Close initiated...
+2021-09-19 17:37:31.913 +0900 [INFO] (main): HikariPool-23 - Closed.
+2021-09-19 17:37:31.914 +0900 [INFO] (main): HikariPool-24 - Started.
+2021-09-19 17:37:31.916 +0900 [INFO] (main): HikariPool-24 - Close initiated...
+2021-09-19 17:37:31.917 +0900 [INFO] (main): HikariPool-24 - Closed.
+2021-09-19 17:37:31.917 +0900 [INFO] (main): HikariPool-25 - Started.
+2021-09-19 17:37:31.919 +0900 [INFO] (main): HikariPool-25 - Close initiated...
+2021-09-19 17:37:31.919 +0900 [INFO] (main): HikariPool-25 - Closed.
+2021-09-19 17:40:34.305 +0900 [INFO] (main): HikariPool-1 - Started.
+2021-09-19 17:40:34.321 +0900 [INFO] (main): HikariPool-1 - Close initiated...
+2021-09-19 17:40:34.321 +0900 [INFO] (main): HikariPool-1 - Closed.
+2021-09-19 17:40:34.323 +0900 [INFO] (main): HikariPool-2 - Started.
+2021-09-19 17:40:34.326 +0900 [INFO] (main): HikariPool-2 - Close initiated...
+2021-09-19 17:40:34.326 +0900 [INFO] (main): HikariPool-2 - Closed.
+2021-09-19 17:40:34.327 +0900 [INFO] (main): HikariPool-3 - Started.
+2021-09-19 17:40:34.329 +0900 [INFO] (main): HikariPool-3 - Close initiated...
+2021-09-19 17:40:34.329 +0900 [INFO] (main): HikariPool-3 - Closed.
+2021-09-19 17:40:34.330 +0900 [INFO] (main): HikariPool-4 - Started.
+2021-09-19 17:40:34.332 +0900 [INFO] (main): HikariPool-4 - Close initiated...
+2021-09-19 17:40:34.332 +0900 [INFO] (main): HikariPool-4 - Closed.
+2021-09-19 17:40:34.333 +0900 [INFO] (main): HikariPool-5 - Started.
+2021-09-19 17:40:34.335 +0900 [INFO] (main): HikariPool-5 - Close initiated...
+2021-09-19 17:40:34.335 +0900 [INFO] (main): HikariPool-5 - Closed.
+2021-09-19 17:40:34.336 +0900 [INFO] (main): HikariPool-6 - Started.
+2021-09-19 17:40:34.338 +0900 [INFO] (main): HikariPool-6 - Close initiated...
+2021-09-19 17:40:34.338 +0900 [INFO] (main): HikariPool-6 - Closed.
+2021-09-19 17:40:34.342 +0900 [INFO] (main): HikariPool-7 - Started.
+2021-09-19 17:40:34.345 +0900 [INFO] (main): HikariPool-7 - Close initiated...
+2021-09-19 17:40:34.345 +0900 [INFO] (main): HikariPool-7 - Closed.
+2021-09-19 17:40:34.346 +0900 [INFO] (main): HikariPool-8 - Started.
+2021-09-19 17:40:34.348 +0900 [INFO] (main): HikariPool-8 - Close initiated...
+2021-09-19 17:40:34.348 +0900 [INFO] (main): HikariPool-8 - Closed.
+2021-09-19 17:40:34.349 +0900 [INFO] (main): HikariPool-9 - Started.
+2021-09-19 17:40:34.351 +0900 [INFO] (main): HikariPool-9 - Close initiated...
+2021-09-19 17:40:34.351 +0900 [INFO] (main): HikariPool-9 - Closed.
+2021-09-19 17:40:34.366 +0900 [INFO] (main): HikariPool-10 - Started.
+2021-09-19 17:40:34.368 +0900 [INFO] (main): HikariPool-10 - Close initiated...
+2021-09-19 17:40:34.368 +0900 [INFO] (main): HikariPool-10 - Closed.
+2021-09-19 17:40:34.369 +0900 [INFO] (main): HikariPool-11 - Started.
+2021-09-19 17:40:34.371 +0900 [INFO] (main): HikariPool-11 - Close initiated...
+2021-09-19 17:40:34.371 +0900 [INFO] (main): HikariPool-11 - Closed.
+2021-09-19 17:40:34.377 +0900 [INFO] (main): secret encryption engine: aesgcm
+2021-09-19 17:40:34.377 +0900 [INFO] (main): HikariPool-12 - Started.
+2021-09-19 17:40:34.379 +0900 [INFO] (main): HikariPool-12 - Close initiated...
+2021-09-19 17:40:34.379 +0900 [INFO] (main): HikariPool-12 - Closed.
+2021-09-19 17:40:34.380 +0900 [INFO] (main): HikariPool-13 - Started.
+2021-09-19 17:40:34.383 +0900 [INFO] (main): HikariPool-13 - Close initiated...
+2021-09-19 17:40:34.383 +0900 [INFO] (main): HikariPool-13 - Closed.
+2021-09-19 17:40:34.383 +0900 [INFO] (main): HikariPool-14 - Started.
+2021-09-19 17:40:34.385 +0900 [INFO] (main): HikariPool-14 - Close initiated...
+2021-09-19 17:40:34.386 +0900 [INFO] (main): HikariPool-14 - Closed.
+2021-09-19 17:40:34.386 +0900 [INFO] (main): HikariPool-15 - Started.
+2021-09-19 17:40:34.389 +0900 [INFO] (main): HikariPool-15 - Close initiated...
+2021-09-19 17:40:34.389 +0900 [INFO] (main): HikariPool-15 - Closed.
+2021-09-19 17:40:34.392 +0900 [INFO] (main): HikariPool-16 - Started.
+2021-09-19 17:40:34.395 +0900 [INFO] (main): HikariPool-16 - Close initiated...
+2021-09-19 17:40:34.395 +0900 [INFO] (main): HikariPool-16 - Closed.
+2021-09-19 17:40:34.396 +0900 [INFO] (main): HikariPool-17 - Started.
+2021-09-19 17:40:34.398 +0900 [INFO] (main): HikariPool-17 - Close initiated...
+2021-09-19 17:40:34.398 +0900 [INFO] (main): HikariPool-17 - Closed.
+2021-09-19 17:40:34.399 +0900 [INFO] (main): HikariPool-18 - Started.
+2021-09-19 17:40:34.401 +0900 [INFO] (main): HikariPool-18 - Close initiated...
+2021-09-19 17:40:34.401 +0900 [INFO] (main): HikariPool-18 - Closed.
+2021-09-19 17:40:34.402 +0900 [INFO] (main): HikariPool-19 - Started.
+2021-09-19 17:40:34.404 +0900 [INFO] (main): HikariPool-19 - Close initiated...
+2021-09-19 17:40:34.405 +0900 [INFO] (main): HikariPool-19 - Closed.
+2021-09-19 17:40:34.405 +0900 [INFO] (main): HikariPool-20 - Started.
+2021-09-19 17:40:34.408 +0900 [INFO] (main): HikariPool-20 - Close initiated...
+2021-09-19 17:40:34.408 +0900 [INFO] (main): HikariPool-20 - Closed.
+2021-09-19 17:40:34.409 +0900 [INFO] (main): HikariPool-21 - Started.
+2021-09-19 17:40:34.411 +0900 [INFO] (main): HikariPool-21 - Close initiated...
+2021-09-19 17:40:34.411 +0900 [INFO] (main): HikariPool-21 - Closed.
+2021-09-19 17:40:34.412 +0900 [INFO] (main): HikariPool-22 - Started.
+2021-09-19 17:40:34.414 +0900 [INFO] (main): HikariPool-22 - Close initiated...
+2021-09-19 17:40:34.414 +0900 [INFO] (main): HikariPool-22 - Closed.
+2021-09-19 17:40:34.417 +0900 [INFO] (main): HikariPool-23 - Started.
+2021-09-19 17:40:34.419 +0900 [INFO] (main): HikariPool-23 - Close initiated...
+2021-09-19 17:40:34.419 +0900 [INFO] (main): HikariPool-23 - Closed.
+2021-09-19 17:40:34.420 +0900 [INFO] (main): HikariPool-24 - Started.
+2021-09-19 17:40:34.423 +0900 [INFO] (main): HikariPool-24 - Close initiated...
+2021-09-19 17:40:34.423 +0900 [INFO] (main): HikariPool-24 - Closed.
+2021-09-19 17:40:34.424 +0900 [INFO] (main): HikariPool-25 - Started.
+2021-09-19 17:40:34.426 +0900 [INFO] (main): HikariPool-25 - Close initiated...
+2021-09-19 17:40:34.426 +0900 [INFO] (main): HikariPool-25 - Closed.
+2021-09-19 17:41:02.742 +0900 [INFO] (main): HikariPool-1 - Started.
+2021-09-19 17:41:02.767 +0900 [INFO] (main): HikariPool-1 - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc.PgConnection.getNetworkTimeout() is not yet implemented.)
+2021-09-19 17:41:02.801 +0900 [INFO] (main): secret encryption engine: aesgcm
+2021-09-19 17:41:02.878 +0900 [INFO] (main): XNIO version 3.3.8.Final
+2021-09-19 17:41:02.885 +0900 [INFO] (main): XNIO NIO Implementation Version 3.3.8.Final
+2021-09-19 17:41:02.896 +0900 [INFO] (main): Starting server on 127.0.0.1:65432
+2021-09-19 17:41:02.916 +0900 [INFO] (main): Bound on 127.0.0.1:65432 (api)
+2021-09-19 17:41:21.617 +0900 [INFO] (shutdown): Started shutdown process
+2021-09-19 17:41:21.618 +0900 [INFO] (shutdown): Shutting down workflow executor loop
+2021-09-19 17:41:21.619 +0900 [INFO] (shutdown): Closing HTTP listening sockets
+2021-09-19 17:41:21.620 +0900 [INFO] (shutdown): Waiting for completion of running HTTP requests...
+2021-09-19 17:41:21.620 +0900 [INFO] (shutdown): Shutting down HTTP worker threads
+2021-09-19 17:41:21.621 +0900 [INFO] (shutdown): Shutting down system
+2021-09-19 17:41:21.623 +0900 [INFO] (shutdown): HikariPool-1 - Close initiated...
+2021-09-19 17:41:21.912 +0900 [INFO] (shutdown): HikariPool-1 - Closed.
+2021-09-19 17:41:21.912 +0900 [INFO] (shutdown): Shutdown completed
+2021-09-19 17:42:04.982 +0900 [INFO] (main): HikariPool-1 - Started.
+2021-09-19 17:42:05.006 +0900 [INFO] (main): HikariPool-1 - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc.PgConnection.getNetworkTimeout() is not yet implemented.)
+2021-09-19 17:42:05.037 +0900 [INFO] (main): secret encryption engine: aesgcm
+2021-09-19 17:42:05.119 +0900 [INFO] (main): XNIO version 3.3.8.Final
+2021-09-19 17:42:05.125 +0900 [INFO] (main): XNIO NIO Implementation Version 3.3.8.Final
+2021-09-19 17:42:05.139 +0900 [INFO] (main): Starting server on 127.0.0.1:65432
+2021-09-19 17:42:05.160 +0900 [INFO] (main): Bound on 127.0.0.1:65432 (api)
+2021-09-19 17:42:12.036 +0900 [INFO] (shutdown): Started shutdown process
+2021-09-19 17:42:12.038 +0900 [INFO] (shutdown): Shutting down workflow executor loop
+2021-09-19 17:42:12.040 +0900 [INFO] (shutdown): Closing HTTP listening sockets
+2021-09-19 17:42:12.041 +0900 [INFO] (shutdown): Waiting for completion of running HTTP requests...
+2021-09-19 17:42:12.041 +0900 [INFO] (shutdown): Shutting down HTTP worker threads
+2021-09-19 17:42:12.043 +0900 [INFO] (shutdown): Shutting down system
+2021-09-19 17:42:12.046 +0900 [INFO] (shutdown): HikariPool-1 - Close initiated...
+2021-09-19 17:42:13.492 +0900 [INFO] (shutdown): HikariPool-1 - Closed.
+2021-09-19 17:42:13.492 +0900 [INFO] (shutdown): Shutdown completed
