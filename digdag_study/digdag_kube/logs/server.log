@@ -238,3 +238,137 @@
 2021-09-19 17:42:12.046 +0900 [INFO] (shutdown): HikariPool-1 - Close initiated...
 2021-09-19 17:42:13.492 +0900 [INFO] (shutdown): HikariPool-1 - Closed.
 2021-09-19 17:42:13.492 +0900 [INFO] (shutdown): Shutdown completed
+2021-09-19 17:52:50.534 +0900 [INFO] (main): HikariPool-1 - Started.
+2021-09-19 17:52:50.559 +0900 [INFO] (main): HikariPool-1 - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc.PgConnection.getNetworkTimeout() is not yet implemented.)
+2021-09-19 17:53:46.328 +0900 [INFO] (main): HikariPool-1 - Started.
+2021-09-19 17:53:46.352 +0900 [INFO] (main): HikariPool-1 - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc.PgConnection.getNetworkTimeout() is not yet implemented.)
+2021-09-19 17:55:07.388 +0900 [INFO] (main): HikariPool-1 - Started.
+2021-09-19 17:55:07.412 +0900 [INFO] (main): HikariPool-1 - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc.PgConnection.getNetworkTimeout() is not yet implemented.)
+2021-09-19 17:56:07.437 +0900 [INFO] (main): HikariPool-1 - Started.
+2021-09-19 17:56:07.461 +0900 [INFO] (main): HikariPool-1 - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc.PgConnection.getNetworkTimeout() is not yet implemented.)
+2021-09-19 17:56:07.491 +0900 [INFO] (main): secret encryption engine: disabled
+2021-09-19 17:56:07.567 +0900 [INFO] (main): XNIO version 3.3.8.Final
+2021-09-19 17:56:07.572 +0900 [INFO] (main): XNIO NIO Implementation Version 3.3.8.Final
+2021-09-19 17:56:07.586 +0900 [INFO] (main): Starting server on 127.0.0.1:65432
+2021-09-19 17:56:07.611 +0900 [INFO] (main): Bound on 127.0.0.1:65432 (api)
+2021-09-19 17:56:09.592 +0900 [INFO] (shutdown): Started shutdown process
+2021-09-19 17:56:09.592 +0900 [INFO] (shutdown): Shutting down workflow executor loop
+2021-09-19 17:56:09.594 +0900 [INFO] (shutdown): Closing HTTP listening sockets
+2021-09-19 17:56:09.594 +0900 [INFO] (shutdown): Waiting for completion of running HTTP requests...
+2021-09-19 17:56:09.594 +0900 [INFO] (shutdown): Shutting down HTTP worker threads
+2021-09-19 17:56:09.594 +0900 [INFO] (shutdown): Shutting down system
+2021-09-19 17:56:09.596 +0900 [INFO] (shutdown): HikariPool-1 - Close initiated...
+2021-09-19 17:56:10.078 +0900 [INFO] (shutdown): HikariPool-1 - Closed.
+2021-09-19 17:56:10.078 +0900 [INFO] (shutdown): Shutdown completed
+2021-09-19 17:56:24.571 +0900 [INFO] (main): HikariPool-1 - Started.
+2021-09-19 17:56:24.595 +0900 [INFO] (main): HikariPool-1 - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc.PgConnection.getNetworkTimeout() is not yet implemented.)
+2021-09-19 17:56:24.624 +0900 [INFO] (main): secret encryption engine: disabled
+2021-09-19 17:56:24.703 +0900 [INFO] (main): XNIO version 3.3.8.Final
+2021-09-19 17:56:24.707 +0900 [INFO] (main): XNIO NIO Implementation Version 3.3.8.Final
+2021-09-19 17:56:24.717 +0900 [INFO] (main): Starting server on 127.0.0.1:65432
+2021-09-19 17:56:24.735 +0900 [INFO] (main): Bound on 127.0.0.1:65432 (api)
+2021-09-19 17:56:43.337 +0900 [INFO] (shutdown): Started shutdown process
+2021-09-19 17:56:43.340 +0900 [INFO] (shutdown): Shutting down workflow executor loop
+2021-09-19 17:56:43.344 +0900 [INFO] (shutdown): Closing HTTP listening sockets
+2021-09-19 17:56:43.346 +0900 [INFO] (shutdown): Waiting for completion of running HTTP requests...
+2021-09-19 17:56:43.347 +0900 [INFO] (shutdown): Shutting down HTTP worker threads
+2021-09-19 17:56:43.349 +0900 [INFO] (shutdown): Shutting down system
+2021-09-19 17:56:43.357 +0900 [INFO] (shutdown): HikariPool-1 - Close initiated...
+2021-09-19 17:56:43.366 +0900 [INFO] (shutdown): HikariPool-1 - Closed.
+2021-09-19 17:56:43.367 +0900 [INFO] (shutdown): Shutdown completed
+2021-09-19 17:57:00.604 +0900 [INFO] (main): HikariPool-1 - Started.
+2021-09-19 17:57:00.628 +0900 [INFO] (main): HikariPool-1 - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc.PgConnection.getNetworkTimeout() is not yet implemented.)
+2021-09-19 17:58:25.717 +0900 [INFO] (main): HikariPool-1 - Started.
+2021-09-19 17:58:25.741 +0900 [INFO] (main): HikariPool-1 - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc.PgConnection.getNetworkTimeout() is not yet implemented.)
+2021-09-19 17:58:25.772 +0900 [INFO] (main): secret encryption engine: aesgcm
+2021-09-19 17:58:25.850 +0900 [INFO] (main): XNIO version 3.3.8.Final
+2021-09-19 17:58:25.856 +0900 [INFO] (main): XNIO NIO Implementation Version 3.3.8.Final
+2021-09-19 17:58:25.867 +0900 [INFO] (main): Starting server on 127.0.0.1:65432
+2021-09-19 17:58:25.884 +0900 [INFO] (main): Bound on 127.0.0.1:65432 (api)
+2021-09-19 18:00:14.567 +0900 [INFO] (shutdown): Started shutdown process
+2021-09-19 18:00:14.568 +0900 [INFO] (shutdown): Shutting down workflow executor loop
+2021-09-19 18:00:14.569 +0900 [INFO] (shutdown): Closing HTTP listening sockets
+2021-09-19 18:00:14.570 +0900 [INFO] (shutdown): Waiting for completion of running HTTP requests...
+2021-09-19 18:00:14.570 +0900 [INFO] (shutdown): Shutting down HTTP worker threads
+2021-09-19 18:00:14.570 +0900 [INFO] (shutdown): Shutting down system
+2021-09-19 18:00:14.573 +0900 [INFO] (shutdown): HikariPool-1 - Close initiated...
+2021-09-19 18:00:14.576 +0900 [INFO] (shutdown): HikariPool-1 - Closed.
+2021-09-19 18:00:14.576 +0900 [INFO] (shutdown): Shutdown completed
+2021-09-19 18:00:29.025 +0900 [INFO] (main): HikariPool-1 - Started.
+2021-09-19 18:00:29.052 +0900 [INFO] (main): HikariPool-1 - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc.PgConnection.getNetworkTimeout() is not yet implemented.)
+2021-09-19 18:00:29.086 +0900 [INFO] (main): secret encryption engine: aesgcm
+2021-09-19 18:00:29.168 +0900 [INFO] (main): XNIO version 3.3.8.Final
+2021-09-19 18:00:29.173 +0900 [INFO] (main): XNIO NIO Implementation Version 3.3.8.Final
+2021-09-19 18:00:29.186 +0900 [INFO] (main): Starting server on 127.0.0.1:65432
+2021-09-19 18:00:29.203 +0900 [INFO] (main): Bound on 127.0.0.1:65432 (api)
+2021-09-19 18:05:20.754 +0900 [WARN] (local-agent-0): HikariPool-1 - Connection org.postgresql.jdbc.PgConnection@686e00b6 marked as broken because of SQLSTATE(08003), ErrorCode(0)
+org.postgresql.util.PSQLException: This connection has been closed.
+	at org.postgresql.jdbc.PgConnection.checkClosed(PgConnection.java:806)
+	at org.postgresql.jdbc.PgConnection.rollback(PgConnection.java:813)
+	at com.zaxxer.hikari.pool.ProxyConnection.rollback(ProxyConnection.java:364)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.rollback(HikariProxyConnection.java)
+	at org.skife.jdbi.v2.tweak.transactions.LocalTransactionHandler.rollback(LocalTransactionHandler.java:85)
+	at org.skife.jdbi.v2.BasicHandle.rollback(BasicHandle.java:176)
+	at io.digdag.core.database.ThreadLocalTransactionManager$LazyTransaction.abort(ThreadLocalTransactionManager.java:158)
+	at io.digdag.core.database.ThreadLocalTransactionManager.begin(ThreadLocalTransactionManager.java:279)
+	at io.digdag.core.database.ThreadLocalTransactionManager.begin(ThreadLocalTransactionManager.java:225)
+	at io.digdag.core.agent.MultiThreadAgent.run(MultiThreadAgent.java:127)
+	at java.lang.Thread.run(Thread.java:748)
+2021-09-19 18:05:20.757 +0900 [ERROR] (local-agent-0): Uncaught exception during acquiring tasks from a server. Ignoring. Agent thread will be retried.
+org.skife.jdbi.v2.exceptions.UnableToRestoreAutoCommitStateException: java.sql.SQLException: Connection is closed
+	at org.skife.jdbi.v2.tweak.transactions.LocalTransactionHandler.restoreAutoCommitState(LocalTransactionHandler.java:238)
+	at org.skife.jdbi.v2.tweak.transactions.LocalTransactionHandler.rollback(LocalTransactionHandler.java:91)
+	at org.skife.jdbi.v2.BasicHandle.rollback(BasicHandle.java:176)
+	at io.digdag.core.database.ThreadLocalTransactionManager$LazyTransaction.abort(ThreadLocalTransactionManager.java:158)
+	at io.digdag.core.database.ThreadLocalTransactionManager.begin(ThreadLocalTransactionManager.java:279)
+	at io.digdag.core.database.ThreadLocalTransactionManager.begin(ThreadLocalTransactionManager.java:225)
+	at io.digdag.core.agent.MultiThreadAgent.run(MultiThreadAgent.java:127)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLException: Connection is closed
+	at com.zaxxer.hikari.pool.ProxyConnection$ClosedConnection$1.invoke(ProxyConnection.java:472)
+	at com.sun.proxy.$Proxy58.setAutoCommit(Unknown Source)
+	at com.zaxxer.hikari.pool.ProxyConnection.setAutoCommit(ProxyConnection.java:382)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.setAutoCommit(HikariProxyConnection.java)
+	at org.skife.jdbi.v2.tweak.transactions.LocalTransactionHandler.restoreAutoCommitState(LocalTransactionHandler.java:234)
+	... 7 common frames omitted
+2021-09-19 18:05:27.176 +0900 [INFO] (shutdown): Started shutdown process
+2021-09-19 18:05:27.178 +0900 [INFO] (shutdown): Shutting down workflow executor loop
+2021-09-19 18:05:27.181 +0900 [INFO] (shutdown): Closing HTTP listening sockets
+2021-09-19 18:05:27.182 +0900 [INFO] (shutdown): Waiting for completion of running HTTP requests...
+2021-09-19 18:05:27.182 +0900 [INFO] (shutdown): Shutting down HTTP worker threads
+2021-09-19 18:05:27.183 +0900 [INFO] (shutdown): Shutting down system
+2021-09-19 18:05:27.186 +0900 [INFO] (shutdown): HikariPool-1 - Close initiated...
+2021-09-19 18:05:27.189 +0900 [INFO] (shutdown): HikariPool-1 - Closed.
+2021-09-19 18:05:27.189 +0900 [INFO] (shutdown): Shutdown completed
+2021-09-19 18:05:29.384 +0900 [INFO] (main): HikariPool-1 - Started.
+2021-09-19 18:05:29.409 +0900 [INFO] (main): HikariPool-1 - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc.PgConnection.getNetworkTimeout() is not yet implemented.)
+2021-09-19 18:05:29.439 +0900 [INFO] (main): secret encryption engine: aesgcm
+2021-09-19 18:05:29.513 +0900 [INFO] (main): XNIO version 3.3.8.Final
+2021-09-19 18:05:29.519 +0900 [INFO] (main): XNIO NIO Implementation Version 3.3.8.Final
+2021-09-19 18:05:29.530 +0900 [INFO] (main): Starting server on 127.0.0.1:65432
+2021-09-19 18:05:29.546 +0900 [INFO] (main): Bound on 127.0.0.1:65432 (api)
+2021-09-19 18:05:58.827 +0900 [INFO] (shutdown): Started shutdown process
+2021-09-19 18:05:58.829 +0900 [INFO] (shutdown): Shutting down workflow executor loop
+2021-09-19 18:05:58.830 +0900 [INFO] (shutdown): Closing HTTP listening sockets
+2021-09-19 18:05:58.831 +0900 [INFO] (shutdown): Waiting for completion of running HTTP requests...
+2021-09-19 18:05:58.831 +0900 [INFO] (shutdown): Shutting down HTTP worker threads
+2021-09-19 18:05:58.832 +0900 [INFO] (shutdown): Shutting down system
+2021-09-19 18:05:58.834 +0900 [INFO] (shutdown): HikariPool-1 - Close initiated...
+2021-09-19 18:05:58.837 +0900 [INFO] (shutdown): HikariPool-1 - Closed.
+2021-09-19 18:05:58.838 +0900 [INFO] (shutdown): Shutdown completed
+2021-09-19 18:06:01.287 +0900 [INFO] (main): HikariPool-1 - Started.
+2021-09-19 18:06:01.312 +0900 [INFO] (main): HikariPool-1 - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc.PgConnection.getNetworkTimeout() is not yet implemented.)
+2021-09-19 18:06:01.345 +0900 [INFO] (main): secret encryption engine: aesgcm
+2021-09-19 18:06:01.422 +0900 [INFO] (main): XNIO version 3.3.8.Final
+2021-09-19 18:06:01.427 +0900 [INFO] (main): XNIO NIO Implementation Version 3.3.8.Final
+2021-09-19 18:06:01.436 +0900 [INFO] (main): Starting server on 127.0.0.1:65432
+2021-09-19 18:06:01.453 +0900 [INFO] (main): Bound on 127.0.0.1:65432 (api)
+2021-09-19 18:06:42.642 +0900 [INFO] (shutdown): Started shutdown process
+2021-09-19 18:06:42.643 +0900 [INFO] (shutdown): Shutting down workflow executor loop
+2021-09-19 18:06:42.645 +0900 [INFO] (shutdown): Closing HTTP listening sockets
+2021-09-19 18:06:42.645 +0900 [INFO] (shutdown): Waiting for completion of running HTTP requests...
+2021-09-19 18:06:42.645 +0900 [INFO] (shutdown): Shutting down HTTP worker threads
+2021-09-19 18:06:42.646 +0900 [INFO] (shutdown): Shutting down system
+2021-09-19 18:06:42.647 +0900 [INFO] (shutdown): HikariPool-1 - Close initiated...
+2021-09-19 18:06:42.649 +0900 [INFO] (shutdown): HikariPool-1 - Closed.
+2021-09-19 18:06:42.649 +0900 [INFO] (shutdown): Shutdown completed
