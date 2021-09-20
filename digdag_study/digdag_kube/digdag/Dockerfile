@@ -14,17 +14,20 @@ ENV LC_ALL ja_JP.UTF-8
 
 ENV TZ JST-9
 
-RUN curl -o ~/bin/digdag --create-dirs -L "https://dl.digdag.io/digdag-${DIGDAG_VERSION}" && \
-    chmod +x ~/bin/digdag && \
+RUN curl -o /usr/local/bin/digdag --create-dirs -L "https://dl.digdag.io/digdag-${DIGDAG_VERSION}" && \
+    chmod +x /usr/local/bin/digdag && \
     apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/* && \
     adduser --shell /sbin/nologin --disabled-password --gecos "" digdag
 
 USER digdag
 
-# WORKDIR /home/digdag
+WORKDIR /home/digdag
 
-# ENV PATH=${PATH}:/user/local/bin
-# ENV HOME=${PATH}}
+ENV PATH=${PATH}:/user/local/bin
+ENV HOME=${PATH}}
 
-RUN echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc
 EXPOSE 65432
+
+COPY project .
+
+CMD ["sh","-c", "java -jar /usr/local/bin/digdag server -m"]

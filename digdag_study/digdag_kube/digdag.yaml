@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: digdag
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: digdag
+  template:
+    metadata:
+      labels:
+        app: digdag
+    spec:
+      containers:
+      - name: digdag
+        image: brubian/digdag
+        ports:
+        - containerPort: 65432

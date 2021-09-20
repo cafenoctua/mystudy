@@ -12,10 +12,10 @@ services:
   digdag:
     build:
         context: .
-        dockerfile: Dockerfile.dev
+        dockerfile: Dockerfile
     volumes: 
       - ./project:/work
     ports:
       - 65432:65432
-    command: /bin/sh -c "while sleep 1000; do :; done"
+    # command: /bin/sh -c "while sleep 1000; do :; done"
   
