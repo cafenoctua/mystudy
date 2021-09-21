@@ -1,0 +1,6 @@
+_export:
+  bq:
+    dataset: sample
+
++proc:
+  bq>: query.sql

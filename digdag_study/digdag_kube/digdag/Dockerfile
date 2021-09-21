@@ -30,4 +30,4 @@ EXPOSE 65432
 
 COPY project .
 
-CMD ["sh","-c", "java -jar /usr/local/bin/digdag server -m"]
+# CMD ["sh","-c", "java -jar /usr/local/bin/digdag server -m"]

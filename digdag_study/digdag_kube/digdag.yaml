@@ -15,5 +15,14 @@ spec:
       containers:
       - name: digdag
         image: brubian/digdag
+        command: ["sh", "start.sh"]
         ports:
         - containerPort: 65432
+        volumeMounts:
+          - name: analytics-credentials
+            mountPath: /secrets
+            readOnly: true
+      volumes:
+        - name: analytics-credentials
+          secret:
+            secretName: analytics-credentials
