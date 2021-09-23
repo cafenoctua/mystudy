@@ -26,3 +26,17 @@ spec:
         - name: analytics-credentials
           secret:
             secretName: analytics-credentials
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: digdag-service
+spec:
+  selector:
+    app: digdag
+  ports:
+    - port: 6543
+      targetPort: 65432
+      protocol: TCP
+  type: ClusterIP

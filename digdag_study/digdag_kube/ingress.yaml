@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: digdag-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/service-upstream: "true"
+spec:
+  rules:
+    - http:
+        paths:
+        - path: /digdag
+          pathType: Prefix
+          backend:
+            service:
+              name: digdag-service
+              port:
+                number: 6543
+        - path: /test
+          pathType: Prefix
+          backend:
+            service:
+              name: session-svc
+              port:
+                number: 9080
