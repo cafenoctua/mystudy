@@ -15,5 +15,28 @@ spec:
       containers:
       - name: digdag
         image: brubian/digdag
+        command: ["sh", "start.sh"]
         ports:
         - containerPort: 65432
+        volumeMounts:
+          - name: analytics-credentials
+            mountPath: /secrets
+            readOnly: true
+      volumes:
+        - name: analytics-credentials
+          secret:
+            secretName: analytics-credentials
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: digdag-service
+spec:
+  selector:
+    app: digdag
+  ports:
+    - port: 6543
+      targetPort: 65432
+      protocol: TCP
+  type: ClusterIP
