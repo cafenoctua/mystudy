@@ -10,4 +10,4 @@ envsubst < /etc/server.properties.template > /etc/server.properties
 envsubst < /etc/.bigqueryrc.template > /root/.bigqueryrc
 
 # Start server
-digdag server -m --max-task-threads 5
+digdag server -m -b 0.0.0.0 --port 65432

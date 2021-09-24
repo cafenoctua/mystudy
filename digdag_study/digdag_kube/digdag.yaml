@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: digdag
+  name: digdag-deployment
 spec:
   replicas: 1
   selector:
@@ -36,7 +36,7 @@ spec:
   selector:
     app: digdag
   ports:
-    - port: 6543
+    - port: 65432
       targetPort: 65432
       protocol: TCP
   type: ClusterIP
