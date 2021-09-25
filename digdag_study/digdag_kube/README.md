@@ -150,13 +150,58 @@ digdag init {workflow name}
 cd {workflow name}
 digdag push {project name}
 ```
+## digdag ingress対応
+ポッドに直接つなげてしまうとk8sのうま味がなくなるためIngressを使ってUIへのアクセス経路を作ります
+これで中で複数のUIが立ち上がっても接続先を統一することができます
 
+ingress.yaml
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: digdag-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/service-upstream: "true"
+    nginx.ingress.kubernetes.io/affinity: 'cookie'
+spec:
+  rules:
+    - http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: digdag-service
+              port:
+                number: 65432
+```
+ドメイン名を取得してないため今回はminikubeのIPアドレスから接続するようにしました
+そのためhttp接続での設定となっており他の接続先もないため`http://{IP address}`直打ちで接続できます
+
+## digdagサーバーへのpush
+ローカルで構築したdigdagをクライアント、minikubeのdigdag serverを実行をするサーバーと見立てた構成を上記までの取り組みで作りました
+次にサーバーへクライアントで作ったワークフローをpushできるようにすれば疑似的ですが稼働ができます
+
+そのためにはクライアントのpush先をサーバーに変更します
+
+digdagをインストールすると特にインストールコマンドを変更しない限りインストールしたユーザーのホームディレクトリにdigdagのconfigファイルが生成されます
+
+コンフィグファイルのディレクトリになります`~/.config/digdag/config`
+このコンフィグファイルに以下の内容を書き加えるもしくは書き換えるとpush先を変更できます
+```
+client.http.endpoint = http://{任意のIPアドレスもしくはドメイン名}
+```
+サーバーが証明書を取得している場合は`https`に書き換えてください
 
 
 # Ref
+- [digdag github](https://github.com/treasure-data/digdag)
 - [スケーラブルなワークフロー実行環境を目指して](https://speakerdeck.com/trsnium/embulk-and-digdag-meetup-2020)
 - [D2-2-S09: BigQuery を使い倒せ！ DeNA データエンジニアの取り組み事例](https://www.youtube.com/watch?v=k1CpRz0C6B8)
 - [digdag中心の生活](https://speakerdeck.com/rikiyaoguchi/digdagzhong-xin-falsesheng-huo?slide=65)
 - [Digdag + Embulkをクラウド転生させてデータ基盤運用を圧倒的に楽にした話](https://www.m3tech.blog/entry/2020/12/19/110000)
 - [GKEにおけるDigdagでのGCPのクレデンシャルの取り扱い bqオペレータとgcloudコマンドのクレデンシャルのズレ](https://komi.dev/post/2021-03-21-gcp-credential-in-digdag/)
 - [EKS(Kubernetes)上にDigdag・Embulk・Redashで分析環境を構築する](https://wapa5pow.com/posts/2019-04-19--build-analytics-environment-on-eks)
+- [digdagのコンフィグについて（~/.config/digdag/config）](https://qiita.com/toru-takahashi/items/a7253dec31cb5f36c196)
+- [Digdagによる大規模データ処理の自動化とエラー処理](https://www.slideshare.net/frsyuki/digdag-76749443)

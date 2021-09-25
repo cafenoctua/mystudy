@@ -2,12 +2,12 @@
 
 # Digdag起動前にgcloudをactivate
 export GOOGLE_APPLICATION_CREDENTIALS=/secrets/digdag.json
-echo $GOOGLE_APPLICATION_CREDENTIALS_JSON >> $GOOGLE_APPLICATION_CREDENTIALS
+# echo $GOOGLE_APPLICATION_CREDENTIALS_JSON >> $GOOGLE_APPLICATION_CREDENTIALS
 gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
 
 # render configuration files using environment variables
-envsubst < /etc/server.properties.template > /etc/server.properties
-envsubst < /etc/.bigqueryrc.template > /root/.bigqueryrc
+# envsubst < /etc/server.properties.template > /etc/server.properties
+# envsubst < /etc/.bigqueryrc.template > /root/.bigqueryrc
 
 # Start server
-digdag server -m --max-task-threads 5
+digdag server -m -b 0.0.0.0 --port 65432

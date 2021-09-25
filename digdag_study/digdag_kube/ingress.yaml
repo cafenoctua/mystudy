@@ -3,23 +3,17 @@ kind: Ingress
 metadata:
   name: digdag-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/service-upstream: "true"
+    nginx.ingress.kubernetes.io/affinity: 'cookie'
 spec:
   rules:
     - http:
         paths:
-        - path: /digdag
+        - path: /
           pathType: Prefix
           backend:
             service:
               name: digdag-service
               port:
-                number: 6543
-        - path: /test
-          pathType: Prefix
-          backend:
-            service:
-              name: session-svc
-              port:
-                number: 9080
+                number: 65432

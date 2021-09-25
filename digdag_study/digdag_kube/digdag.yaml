@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: digdag
+  name: digdag-deployment
 spec:
   replicas: 1
   selector:
@@ -15,7 +15,6 @@ spec:
       containers:
       - name: digdag
         image: brubian/digdag
-        command: ["sh", "start.sh"]
         ports:
         - containerPort: 65432
         volumeMounts:
@@ -36,7 +35,10 @@ spec:
   selector:
     app: digdag
   ports:
-    - port: 6543
+    - port: 65432
+    # - port: 30001
       targetPort: 65432
       protocol: TCP
+
   type: ClusterIP
+  # type: NodePort
