@@ -15,7 +15,6 @@ spec:
       containers:
       - name: digdag
         image: brubian/digdag
-        command: ["sh", "start.sh"]
         ports:
         - containerPort: 65432
         volumeMounts:
@@ -37,6 +36,9 @@ spec:
     app: digdag
   ports:
     - port: 65432
+    # - port: 30001
       targetPort: 65432
       protocol: TCP
+
   type: ClusterIP
+  # type: NodePort
