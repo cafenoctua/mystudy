@@ -10,4 +10,4 @@ gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
 # envsubst < /etc/.bigqueryrc.template > /root/.bigqueryrc
 
 # Start server
-digdag server -m -b 0.0.0.0 --port 65432
+digdag server --port 65432 -c server.properties

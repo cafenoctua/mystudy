@@ -194,6 +194,48 @@ client.http.endpoint = http://{任意のIPアドレスもしくはドメイン�
 ```
 サーバーが証明書を取得している場合は`https`に書き換えてください
 
+## PostgreSQLと連携してデータを永続化させる
+digdagはサーバーモードでプロジェクト、ワークフローの管理ができます。
+その際サーバーは主に2つのモードで稼働されます。
+- オンメモリ
+- PostgreSQL
+
+オンメモリで稼働する場合データはメモリ上で管理されるためサーバーが停止すると同時データが削除されます。
+
+オンメモリサーバーは以下のコマンドで実行されます
+```
+digdag server -m
+```
+
+オンメモリはローカルでテストする分には手軽で良いですが冗長性をもたせた構成を作りたい場合だとそれぞれのノードのメモリでデータ管理されてしまい実現ができないため別のノードでDBを持たせてそこでデータ管理をさせるとデータの永続化と共有が可能となり冗長構成を実現できます。
+
+digdagとPostgresSQLを連携させるにはdigdagのサーバーを設定するファイルとPostgreSQLにdigdag用のDBを作成する必要があります。
+
+まず、設定ファイルから説明します。
+```server.properties
+server.bind = 0.0.0.0                                   # digdagサーバーの接続先のIPアドレス設定
+database.type = postgresql                              # 扱うDBのタイプ
+database.user = digdag                                  # DBで用意したユーザー
+database.password = digdagpass                          # ユーザーのパスワード
+database.database = digdag_db                           # ユーザーが接続できるDB
+database.host = 192.168.49.2                            # PostgreSQLの接続先IPアドレス
+database.port = 30510                                   # PostgreSQLの接続先ポート
+database.maximumPoolSize = 4                            # 使用できるスレッド数
+digdag.secret-encryption-key = MDEyMzQ1Njc4OTAxMjM0NQ== # digdagの暗号化をするときに使うキー
+```
+
+PostgreSQLには以下のコマンドを使いユーザー、DBの設定をします。
+```
+CREATE ROLE digdag WITH PASSWORD 'digdagpass' NOSUPERUSER NOCREATEDB NOCREATEROLE LOGIN;
+CREATE DATABASE digdag_db WITH OWNER digdag;
+CREATE EXTENSION "uuid-ossp";
+```
+これらの作業が済んだら最後に以下コマンドでdigdagサーバーを起動します
+```
+digdag server -c server-properties
+```
+
+minikubeを扱う場合はPostgreSQLをNodePortで実行するとdigdagがminikubeのIPアドレス経由で接続できるためローカルで容易に接続ができるようになります。
 
 # Ref
 - [digdag github](https://github.com/treasure-data/digdag)
