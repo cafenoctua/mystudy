@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+      - image: postgres:13.4
+        name: db
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_PASSWORD
+          value: sample
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: db-svc
+spec:
+  selector:
+    app: db
+  ports:
+    - port: 30001
+      targetPort: 5432
+      protocol: TCP
+  type: NodePort
