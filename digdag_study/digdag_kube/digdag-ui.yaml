@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: digdag-ui-deploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: digdag-ui
+  template:
+    metadata:
+      labels:
+        app: digdag-ui
+    spec:
+      containers:
+      - name: digdag-ui
+        image: brubian/digdag
+        ports:
+        - containerPort: 65432
+      #   volumeMounts:
+      #     - name: analytics-credentials
+      #       mountPath: /secrets
+      #       readOnly: true
+      # volumes:
+      #   - name: analytics-credentials
+      #     secret:
+      #       secretName: analytics-credentials
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: digdag-ui-svc
+spec:
+  selector:
+    app: digdag-ui
+  ports:
+    - port: 60000
+      targetPort: 65432
+      protocol: TCP
+
+  type: ClusterIP
