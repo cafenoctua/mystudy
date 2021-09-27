@@ -2,18 +2,18 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: digdag-ingress
+  namespace: default
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/service-upstream: "true"
-    nginx.ingress.kubernetes.io/affinity: 'cookie'
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   rules:
     - http:
         paths:
-        - path: /
+        - path: /(.*)
           pathType: Prefix
           backend:
             service:
-              name: digdag-service
+              name: digdag-ui-svc
               port:
-                number: 65432
+                number: 60000

@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: digdag-deployment
+  name: digdag-worker
 spec:
   replicas: 5
   selector:
     matchLabels:
-      app: digdag
+      app: digdag-worker
   template:
     metadata:
       labels:
-        app: digdag
+        app: digdag-worker
     spec:
       containers:
-      - name: digdag
-        image: brubian/digdag
+      - name: digdag-worker
+        image: brubian/digdag-worker
         ports:
         - containerPort: 65432
         volumeMounts:
@@ -30,15 +30,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: digdag-service
+  name: digdag-worker-svc
 spec:
   selector:
-    app: digdag
+    app: digdag-worker
   ports:
-    - port: 65432
-    # - port: 30001
+    - port: 61000
       targetPort: 65432
       protocol: TCP
 
   type: ClusterIP
-  # type: NodePort

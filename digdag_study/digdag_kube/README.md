@@ -247,3 +247,4 @@ minikubeを扱う場合はPostgreSQLをNodePortで実行するとdigdagがminiku
 - [EKS(Kubernetes)上にDigdag・Embulk・Redashで分析環境を構築する](https://wapa5pow.com/posts/2019-04-19--build-analytics-environment-on-eks)
 - [digdagのコンフィグについて（~/.config/digdag/config）](https://qiita.com/toru-takahashi/items/a7253dec31cb5f36c196)
 - [Digdagによる大規模データ処理の自動化とエラー処理](https://www.slideshare.net/frsyuki/digdag-76749443)
+- [running digdag server with postgres database ](https://github.com/treasure-data/digdag/issues/1363)
