@@ -5,4 +5,4 @@ export GOOGLE_APPLICATION_CREDENTIALS=/secrets/digdag.json
 gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
 
 # Start server
-digdag server -c server.properties --disable-executor-loop --disable-local-agent
+digdag server -c server.properties --disable-executor-loop --disable-local-agent --disable-scheduler

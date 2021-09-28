@@ -237,6 +237,42 @@ digdag server -c server-properties
 
 minikubeを扱う場合はPostgreSQLをNodePortで実行するとdigdagがminikubeのIPアドレス経由で接続できるためローカルで容易に接続ができるようになります。
 
+# DigdagをHA構成にする場合
+サーバーとして稼働させる場合に以下4つの形式で稼働させることができます。
+- UI
+- エージェント
+- ワークフロー
+- スケジューラー
+
+起動自体は`digdag server`で起動しますがその際のオプションを変更することによってそれぞれ独立した役割を持ったものに変更できます。
+
+- UI
+  - --disable-executor-loop --disable-local-agent --disable-scheduler
+- エージェント
+  - --disable-executor-loop --disable-scheduler
+- ワークフロー
+  - --disable-local-agent --disable-scheduler
+- スケジューラー
+  - --disable-local-agent
+
+UIは、ローカル(サーバー内)実行とループ処理、スケジュール処理を不可にすることでワークフローとプロジェクトのGUI管理のみを行います。
+このようにそれぞれのサーバーの機能を独立させることでそれぞれより細かく設定やリソースの配分を決めることができます。
+
+# ロギング
+digdagはserver.propertiesを設定することでローカル、AWS, GCPにロギングができるようになります。
+以下GCPのロギング設定になります。
+```
+log-server.type = gcs
+log-server.gcs.bucket = digdag-log
+log-server.gcs.credentials.json.path = /secrets/digdag.json
+```
+
+全サーバーに設定することでログの永続化ができます。
+
+サーバーの細かい設定については以下のリンクを参照してください。
+- [Server-mode commands](https://docs.digdag.io/command_reference.html#server-mode-commands)
+
+
 # Ref
 - [digdag github](https://github.com/treasure-data/digdag)
 - [スケーラブルなワークフロー実行環境を目指して](https://speakerdeck.com/trsnium/embulk-and-digdag-meetup-2020)
@@ -248,3 +284,5 @@ minikubeを扱う場合はPostgreSQLをNodePortで実行するとdigdagがminiku
 - [digdagのコンフィグについて（~/.config/digdag/config）](https://qiita.com/toru-takahashi/items/a7253dec31cb5f36c196)
 - [Digdagによる大規模データ処理の自動化とエラー処理](https://www.slideshare.net/frsyuki/digdag-76749443)
 - [running digdag server with postgres database ](https://github.com/treasure-data/digdag/issues/1363)
+- [DigdagをHA構成にしてみた](https://techblog.zozo.com/entry/digdag_ha)
+- [Server-mode commands](https://docs.digdag.io/command_reference.html#server-mode-commands)
