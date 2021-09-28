@@ -29,5 +29,5 @@ RUN alias digdag="java -jar /usr/local/bin/digdag"
 
 EXPOSE 65432
 
-ENTRYPOINT [ "sh", "start-ui.sh" ]
+# ENTRYPOINT [ "sh", "start-ui.sh" ]
 # ENTRYPOINT [ "digdag", "server",  "-c",  "server.properties", "--disable-local-agent", "--disable-executor-loop" ]
