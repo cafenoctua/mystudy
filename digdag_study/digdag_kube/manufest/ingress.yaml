@@ -14,6 +14,6 @@ spec:
           pathType: Prefix
           backend:
             service:
-              name: digdag-ui-svc
+              name: digdag-api-svc
               port:
-                number: 60000
+                number: 65432

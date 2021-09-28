@@ -1,26 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: digdag-worker
+  name: digdag-workflow-deploy
 spec:
-  replicas: 5
+  replicas: 2
   selector:
     matchLabels:
-      app: digdag-worker
+      app: digdag-workflow
   template:
     metadata:
       labels:
-        app: digdag-worker
+        app: digdag-workflow
     spec:
       containers:
-      - name: digdag-worker
-        image: brubian/digdag-worker
+      - name: digdag-workflow
+        image: brubian/digdag
         ports:
         - containerPort: 65432
         volumeMounts:
           - name: analytics-credentials
             mountPath: /secrets
             readOnly: true
+        command: ["sh", "start-workflow.sh"]
       volumes:
         - name: analytics-credentials
           secret:
@@ -30,12 +31,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: digdag-worker-svc
+  name: digdag-workflow-svc
 spec:
   selector:
-    app: digdag-worker
+    app: digdag-workflow
   ports:
-    - port: 61000
+    - port: 65432
       targetPort: 65432
       protocol: TCP
 

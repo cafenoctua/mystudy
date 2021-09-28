@@ -30,12 +30,8 @@ RUN apt-get -y update && apt-get install -y google-cloud-sdk
 USER digdag
 
 WORKDIR /home/digdag
-COPY ./project/start.sh ./start.sh
-COPY ./project/server.properties ./server.properties
-COPY ./project/config .config/digdag/config
+COPY ./config/ .
 
 RUN alias digdag="java -jar /usr/local/bin/digdag"
 
 EXPOSE 65432
-
-ENTRYPOINT [ "sh", "start.sh" ]

@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: digdag-schedule-deploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: digdag-schedule
+  template:
+    metadata:
+      labels:
+        app: digdag-schedule
+    spec:
+      containers:
+      - name: digdag-schedule
+        image: brubian/digdag
+        ports:
+        - containerPort: 65432
+        volumeMounts:
+          - name: analytics-credentials
+            mountPath: /secrets
+            readOnly: true
+        command: ["sh", "start-schedule.sh"]
+      volumes:
+        - name: analytics-credentials
+          secret:
+            secretName: analytics-credentials
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: digdag-schedule-svc
+spec:
+  selector:
+    app: digdag-schedule
+  ports:
+    - port: 65432
+      targetPort: 65432
+      protocol: TCP
+
+  type: ClusterIP
