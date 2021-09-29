@@ -272,6 +272,13 @@ log-server.gcs.credentials.json.path = /secrets/digdag.json
 サーバーの細かい設定については以下のリンクを参照してください。
 - [Server-mode commands](https://docs.digdag.io/command_reference.html#server-mode-commands)
 
+# CloudSQLとの連携
+ローカルと接続する場合はCloudSQL側認可するIPを登録する必要があります。
+CloudSQLを立ち上げてから生成されるIPとデフォルトポート(5432)をserver.propertiesに書き込みます。
+CloudSQL側でdigdag_dbを作ればdigadagからデータを書き込めるようになります。
+```
+CREATE DATEBASE digdag_db;
+```
 
 # Ref
 - [digdag github](https://github.com/treasure-data/digdag)
