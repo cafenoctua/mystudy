@@ -9,7 +9,7 @@ locals {
 }
 
 resource "google_sql_database_instance" "postgres" {
-  name = "digdag"
+  name = "digdag1"
   database_version = "POSTGRES_13"
   region = "us-central1"
 

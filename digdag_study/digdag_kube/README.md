@@ -293,3 +293,4 @@ CREATE DATEBASE digdag_db;
 - [running digdag server with postgres database ](https://github.com/treasure-data/digdag/issues/1363)
 - [DigdagをHA構成にしてみた](https://techblog.zozo.com/entry/digdag_ha)
 - [Server-mode commands](https://docs.digdag.io/command_reference.html#server-mode-commands)
+- [google_sql_database_instance](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database_instance#granular-restriction-of-network-access)
