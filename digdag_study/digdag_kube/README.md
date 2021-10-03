@@ -280,6 +280,37 @@ CloudSQL側でdigdag_dbを作ればdigadagからデータを書き込めるよ�
 CREATE DATEBASE digdag_db;
 ```
 
+# helmへの対応
+helmを用いるとマニフェストファイルの管理とデプロイを簡略化できます。
+
+目的のテンプレートの作成します。
+```
+helm create digdag-ha
+```
+
+処理テンプレートに.yamlファイルとvaluesファイルが作られるためこれらを削除します。その後、今まで作っていたdigdagのマニフェストファイルをtemplateにコピーします。
+その際にsecret.yamlが欠けているので作成します。
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: analytics-credentials
+type: Opaque
+data:
+  digdag.json: {base64 serviceaccount.json}
+```
+dataでネストされた箇所にファイル名をキーにしてbase64でエンコードされた認証情報を入力します。
+
+これらの準備が済んだら
+```
+helm install digdag-ha digdag-ha
+```
+でリリースを作成すると同時にマニフェストで設定されているリソースが構築されていきます。
+
+その後の使い方は通常のkubectl通りの方法で操作できます。
+
+
+
 # Ref
 - [digdag github](https://github.com/treasure-data/digdag)
 - [スケーラブルなワークフロー実行環境を目指して](https://speakerdeck.com/trsnium/embulk-and-digdag-meetup-2020)
