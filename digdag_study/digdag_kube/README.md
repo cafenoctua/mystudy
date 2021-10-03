@@ -277,7 +277,7 @@ log-server.gcs.credentials.json.path = /secrets/digdag.json
 CloudSQLを立ち上げてから生成されるIPとデフォルトポート(5432)をserver.propertiesに書き込みます。
 CloudSQL側でdigdag_dbを作ればdigadagからデータを書き込めるようになります。
 ```
-CREATE DATEBASE digdag_db;
+CREATE DATABASE digdag_db;
 ```
 
 # Ref

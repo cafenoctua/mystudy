@@ -15,6 +15,10 @@ resource "google_sql_database_instance" "postgres" {
 
   settings {
     tier = "db-f1-micro"
+    database_flags {
+      name = "max_connections"
+      value = "25"
+    }
     ip_configuration {
       dynamic "authorized_networks" {
           for_each = local.onprem

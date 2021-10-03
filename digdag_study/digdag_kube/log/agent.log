@@ -1,19 +1,13 @@
-WARNING: Could not setup log file in /home/digdag/.config/gcloud/logs, (Error: Could not create directory [/home/digdag/.config/gcloud/logs/2021.09.26]: Permission denied.
-
-Please verify that you have permissions to write to the parent directory..
-The configuration directory may not be writable. To learn more, see https://cloud.google.com/sdk/docs/configurations#creating_a_configuration
-ERROR: (gcloud.auth.activate-service-account) Could not create directory [/home/digdag/.config/gcloud]: Permission denied.
-
-Please verify that you have permissions to write to the parent directory.
-2021-09-26 11:54:46 +0900: Digdag v0.10.2
-2021-09-26 11:54:46 +0900 [INFO] (main) io.digdag.core.crypto.SecretCryptoProvider: secret encryption engine: aesgcm
+Activated service account credentials for: [digdag@bq-analysis-study.iam.gserviceaccount.com]
+2021-10-03 10:29:57 +0900: Digdag v0.10.2
+2021-10-03 10:30:03 +0900 [INFO] (main) io.digdag.core.crypto.SecretCryptoProvider: secret encryption engine: aesgcm
 error: com.google.inject.CreationException: Unable to create injector, see the following errors:
 
-1) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+1) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
-Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:516)
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:118)
 	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:71)
@@ -48,30 +42,15 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed
 	at io.digdag.cli.Server.main(Server.java:106)
 	at io.digdag.cli.Main.cli(Main.java:195)
 	at io.digdag.cli.Main.main(Main.java:83)
-Caused by: org.postgresql.util.PSQLException: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: org.postgresql.util.PSQLException: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at org.postgresql.Driver$ConnectThread.getResult(Driver.java:358)
 	at org.postgresql.Driver.connect(Driver.java:282)
 	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:95)
 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:316)
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:506)
 	... 33 more
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:607)
-	at org.postgresql.core.PGStream.<init>(PGStream.java:64)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:147)
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:55)
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:219)
-	at org.postgresql.Driver.makeConnection(Driver.java:407)
-	at org.postgresql.Driver.access$100(Driver.java:55)
-	at org.postgresql.Driver$ConnectThread.run(Driver.java:317)
-	at java.lang.Thread.run(Thread.java:748)
 
-2) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -79,7 +58,7 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
   while locating io.digdag.core.database.ThreadLocalTransactionManager
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:33) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating io.digdag.core.database.TransactionManager
-Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:516)
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:118)
 	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:71)
@@ -123,30 +102,15 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed
 	at io.digdag.cli.Server.main(Server.java:106)
 	at io.digdag.cli.Main.cli(Main.java:195)
 	at io.digdag.cli.Main.main(Main.java:83)
-Caused by: org.postgresql.util.PSQLException: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: org.postgresql.util.PSQLException: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at org.postgresql.Driver$ConnectThread.getResult(Driver.java:358)
 	at org.postgresql.Driver.connect(Driver.java:282)
 	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:95)
 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:316)
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:506)
 	... 42 more
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:607)
-	at org.postgresql.core.PGStream.<init>(PGStream.java:64)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:147)
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:55)
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:219)
-	at org.postgresql.Driver.makeConnection(Driver.java:407)
-	at org.postgresql.Driver.access$100(Driver.java:55)
-	at org.postgresql.Driver$ConnectThread.run(Driver.java:317)
-	at java.lang.Thread.run(Thread.java:748)
 
-3) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+3) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -158,7 +122,7 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
   while locating io.digdag.core.database.DatabaseProjectStoreManager
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:36) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating io.digdag.core.repository.ProjectStoreManager
-Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:516)
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:118)
 	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:71)
@@ -211,30 +175,15 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed
 	at io.digdag.cli.Server.main(Server.java:106)
 	at io.digdag.cli.Main.cli(Main.java:195)
 	at io.digdag.cli.Main.main(Main.java:83)
-Caused by: org.postgresql.util.PSQLException: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: org.postgresql.util.PSQLException: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at org.postgresql.Driver$ConnectThread.getResult(Driver.java:358)
 	at org.postgresql.Driver.connect(Driver.java:282)
 	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:95)
 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:316)
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:506)
 	... 51 more
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:607)
-	at org.postgresql.core.PGStream.<init>(PGStream.java:64)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:147)
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:55)
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:219)
-	at org.postgresql.Driver.makeConnection(Driver.java:407)
-	at org.postgresql.Driver.access$100(Driver.java:55)
-	at org.postgresql.Driver$ConnectThread.run(Driver.java:317)
-	at java.lang.Thread.run(Thread.java:748)
 
-4) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+4) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -247,7 +196,7 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:37) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating io.digdag.core.queue.QueueSettingStoreManager
 Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException (same stack trace as error #3)
-5) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+5) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -260,7 +209,7 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException (same s
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:38) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating io.digdag.core.session.SessionStoreManager
 Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException (same stack trace as error #3)
-6) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+6) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -273,7 +222,7 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException (same s
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:39) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating io.digdag.core.schedule.ScheduleStoreManager
 Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException (same stack trace as error #3)
-7) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+7) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -289,7 +238,7 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException (same s
   while locating io.digdag.core.agent.InProcessTaskCallbackApi
   at io.digdag.core.agent.LocalAgentModule.configure(LocalAgentModule.java:21) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.agent.LocalAgentModule)
   while locating io.digdag.core.agent.TaskCallbackApi
-Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:516)
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:118)
 	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:71)
@@ -351,30 +300,15 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed
 	at io.digdag.cli.Server.main(Server.java:106)
 	at io.digdag.cli.Main.cli(Main.java:195)
 	at io.digdag.cli.Main.main(Main.java:83)
-Caused by: org.postgresql.util.PSQLException: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: org.postgresql.util.PSQLException: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at org.postgresql.Driver$ConnectThread.getResult(Driver.java:358)
 	at org.postgresql.Driver.connect(Driver.java:282)
 	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:95)
 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:316)
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:506)
 	... 60 more
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:607)
-	at org.postgresql.core.PGStream.<init>(PGStream.java:64)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:147)
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:55)
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:219)
-	at org.postgresql.Driver.makeConnection(Driver.java:407)
-	at org.postgresql.Driver.access$100(Driver.java:55)
-	at org.postgresql.Driver$ConnectThread.run(Driver.java:317)
-	at java.lang.Thread.run(Thread.java:748)
 
-8) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+8) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -397,7 +331,7 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
   while locating io.digdag.core.agent.InProcessTaskServerApi
   at io.digdag.core.agent.LocalAgentModule.configure(LocalAgentModule.java:22) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.agent.LocalAgentModule)
   while locating io.digdag.core.agent.TaskServerApi
-Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:516)
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:118)
 	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:71)
@@ -479,30 +413,15 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed
 	at io.digdag.cli.Server.main(Server.java:106)
 	at io.digdag.cli.Main.cli(Main.java:195)
 	at io.digdag.cli.Main.main(Main.java:83)
-Caused by: org.postgresql.util.PSQLException: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: org.postgresql.util.PSQLException: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at org.postgresql.Driver$ConnectThread.getResult(Driver.java:358)
 	at org.postgresql.Driver.connect(Driver.java:282)
 	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:95)
 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:316)
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:506)
 	... 80 more
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:607)
-	at org.postgresql.core.PGStream.<init>(PGStream.java:64)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:147)
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:55)
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:219)
-	at org.postgresql.Driver.makeConnection(Driver.java:407)
-	at org.postgresql.Driver.access$100(Driver.java:55)
-	at org.postgresql.Driver$ConnectThread.run(Driver.java:317)
-	at java.lang.Thread.run(Thread.java:748)
 
-9) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+9) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -522,7 +441,7 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
   while locating io.digdag.core.agent.RequireOperatorFactory
   at io.digdag.core.agent.LocalAgentModule.configure(LocalAgentModule.java:27) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.agent.LocalAgentModule)
   while locating io.digdag.spi.OperatorFactory annotated with @com.google.inject.internal.Element(setName=,uniqueId=4, type=MULTIBINDER, keyType=)
-Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:516)
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:118)
 	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:71)
@@ -593,30 +512,15 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed
 	at io.digdag.cli.Server.main(Server.java:106)
 	at io.digdag.cli.Main.cli(Main.java:195)
 	at io.digdag.cli.Main.main(Main.java:83)
-Caused by: org.postgresql.util.PSQLException: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: org.postgresql.util.PSQLException: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at org.postgresql.Driver$ConnectThread.getResult(Driver.java:358)
 	at org.postgresql.Driver.connect(Driver.java:282)
 	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:95)
 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:316)
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:506)
 	... 69 more
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:607)
-	at org.postgresql.core.PGStream.<init>(PGStream.java:64)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:147)
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:55)
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:219)
-	at org.postgresql.Driver.makeConnection(Driver.java:407)
-	at org.postgresql.Driver.access$100(Driver.java:55)
-	at org.postgresql.Driver$ConnectThread.run(Driver.java:317)
-	at java.lang.Thread.run(Thread.java:748)
 
-10) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+10) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -633,7 +537,7 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
   at io.digdag.core.queue.QueueModule.configure(QueueModule.java:20) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.queue.QueueModule)
   while locating io.digdag.core.workflow.TaskQueueDispatcher
 Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException (same stack trace as error #7)
-11) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+11) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -648,7 +552,7 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException (same s
   while locating io.digdag.core.database.DatabaseTaskQueueFactory
   at io.digdag.core.queue.QueueModule.configure(QueueModule.java:24) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.queue.QueueModule)
   while locating io.digdag.spi.TaskQueueFactory annotated with @com.google.inject.internal.Element(setName=,uniqueId=53, type=MULTIBINDER, keyType=)
-Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:516)
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:118)
 	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:71)
@@ -709,30 +613,15 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed
 	at io.digdag.cli.Server.main(Server.java:106)
 	at io.digdag.cli.Main.cli(Main.java:195)
 	at io.digdag.cli.Main.main(Main.java:83)
-Caused by: org.postgresql.util.PSQLException: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: org.postgresql.util.PSQLException: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at org.postgresql.Driver$ConnectThread.getResult(Driver.java:358)
 	at org.postgresql.Driver.connect(Driver.java:282)
 	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:95)
 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:316)
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:506)
 	... 59 more
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:607)
-	at org.postgresql.core.PGStream.<init>(PGStream.java:64)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:147)
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:55)
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:219)
-	at org.postgresql.Driver.makeConnection(Driver.java:407)
-	at org.postgresql.Driver.access$100(Driver.java:55)
-	at org.postgresql.Driver$ConnectThread.run(Driver.java:317)
-	at java.lang.Thread.run(Thread.java:748)
 
-12) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+12) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -745,7 +634,7 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
   at io.digdag.server.ServerModule.bindSecrets(ServerModule.java:98) (via modules: com.google.inject.util.Modules$OverrideModule -> io.digdag.server.ServerModule)
   while locating io.digdag.spi.SecretStoreManager
 Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException (same stack trace as error #3)
-13) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+13) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -755,7 +644,7 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException (same s
     for the 1st parameter of io.digdag.core.database.DatabaseMigrator.<init>(DatabaseMigrator.java:55)
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:35) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating io.digdag.core.database.DatabaseMigrator
-Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:516)
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:118)
 	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:71)
@@ -804,30 +693,15 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed
 	at io.digdag.cli.Server.main(Server.java:106)
 	at io.digdag.cli.Main.cli(Main.java:195)
 	at io.digdag.cli.Main.main(Main.java:83)
-Caused by: org.postgresql.util.PSQLException: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: org.postgresql.util.PSQLException: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at org.postgresql.Driver$ConnectThread.getResult(Driver.java:358)
 	at org.postgresql.Driver.connect(Driver.java:282)
 	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:95)
 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:316)
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:506)
 	... 47 more
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:607)
-	at org.postgresql.core.PGStream.<init>(PGStream.java:64)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:147)
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:55)
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:219)
-	at org.postgresql.Driver.makeConnection(Driver.java:407)
-	at org.postgresql.Driver.access$100(Driver.java:55)
-	at org.postgresql.Driver$ConnectThread.run(Driver.java:317)
-	at java.lang.Thread.run(Thread.java:748)
 
-14) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+14) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -838,7 +712,7 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
     for the 2nd parameter of io.digdag.core.database.DatabaseTaskQueueServer.<init>(DatabaseTaskQueueServer.java:61)
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:42) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating io.digdag.core.database.DatabaseTaskQueueServer
-Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:516)
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:118)
 	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:71)
@@ -890,30 +764,15 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed
 	at io.digdag.cli.Server.main(Server.java:106)
 	at io.digdag.cli.Main.cli(Main.java:195)
 	at io.digdag.cli.Main.main(Main.java:83)
-Caused by: org.postgresql.util.PSQLException: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: org.postgresql.util.PSQLException: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at org.postgresql.Driver$ConnectThread.getResult(Driver.java:358)
 	at org.postgresql.Driver.connect(Driver.java:282)
 	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:95)
 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:316)
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:506)
 	... 50 more
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:607)
-	at org.postgresql.core.PGStream.<init>(PGStream.java:64)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:147)
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:55)
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:219)
-	at org.postgresql.Driver.makeConnection(Driver.java:407)
-	at org.postgresql.Driver.access$100(Driver.java:55)
-	at org.postgresql.Driver$ConnectThread.run(Driver.java:317)
-	at java.lang.Thread.run(Thread.java:748)
 
-15) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+15) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -937,7 +796,7 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
     for the 1st parameter of io.digdag.core.agent.OperatorRegistry.<init>(OperatorRegistry.java:73)
   at io.digdag.core.agent.AgentModule.configure(AgentModule.java:18) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.agent.AgentModule)
   while locating io.digdag.core.agent.OperatorRegistry
-Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:516)
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:118)
 	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:71)
@@ -1020,30 +879,15 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed
 	at io.digdag.cli.Server.main(Server.java:106)
 	at io.digdag.cli.Main.cli(Main.java:195)
 	at io.digdag.cli.Main.main(Main.java:83)
-Caused by: org.postgresql.util.PSQLException: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: org.postgresql.util.PSQLException: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at org.postgresql.Driver$ConnectThread.getResult(Driver.java:358)
 	at org.postgresql.Driver.connect(Driver.java:282)
 	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:95)
 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:316)
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:506)
 	... 81 more
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:607)
-	at org.postgresql.core.PGStream.<init>(PGStream.java:64)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:147)
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:55)
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:219)
-	at org.postgresql.Driver.makeConnection(Driver.java:407)
-	at org.postgresql.Driver.access$100(Driver.java:55)
-	at org.postgresql.Driver$ConnectThread.run(Driver.java:317)
-	at java.lang.Thread.run(Thread.java:748)
 
-16) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+16) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -1058,7 +902,7 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
     for the 1st parameter of io.digdag.core.workflow.WorkflowExecutor.<init>(WorkflowExecutor.java:196)
   at io.digdag.core.workflow.WorkflowExecutorModule.configure(WorkflowExecutorModule.java:14) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.workflow.WorkflowExecutorModule)
   while locating io.digdag.core.workflow.WorkflowExecutor
-Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:516)
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:118)
 	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:71)
@@ -1119,30 +963,15 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed
 	at io.digdag.cli.Server.main(Server.java:106)
 	at io.digdag.cli.Main.cli(Main.java:195)
 	at io.digdag.cli.Main.main(Main.java:83)
-Caused by: org.postgresql.util.PSQLException: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: org.postgresql.util.PSQLException: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at org.postgresql.Driver$ConnectThread.getResult(Driver.java:358)
 	at org.postgresql.Driver.connect(Driver.java:282)
 	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:95)
 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:316)
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:506)
 	... 59 more
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:607)
-	at org.postgresql.core.PGStream.<init>(PGStream.java:64)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:147)
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:55)
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:219)
-	at org.postgresql.Driver.makeConnection(Driver.java:407)
-	at org.postgresql.Driver.access$100(Driver.java:55)
-	at org.postgresql.Driver$ConnectThread.run(Driver.java:317)
-	at java.lang.Thread.run(Thread.java:748)
 
-17) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+17) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -1158,7 +987,7 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
   at io.digdag.core.workflow.WorkflowExecutorModule.configure(WorkflowExecutorModule.java:19) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.workflow.WorkflowExecutorModule)
   while locating io.digdag.core.session.SessionMonitorExecutor
 Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException (same stack trace as error #16)
-18) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+18) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -1174,7 +1003,7 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException (same s
   at io.digdag.core.schedule.ScheduleExecutorModule.configure(ScheduleExecutorModule.java:14) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.schedule.ScheduleExecutorModule)
   while locating io.digdag.core.schedule.ScheduleExecutor
 Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException (same stack trace as error #16)
-19) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+19) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -1193,7 +1022,7 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException (same s
     for the 3rd parameter of io.digdag.core.agent.OperatorManager.<init>(OperatorManager.java:85)
   at io.digdag.core.agent.LocalAgentModule.configure(LocalAgentModule.java:23) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.agent.LocalAgentModule)
   while locating io.digdag.core.agent.OperatorManager
-Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:516)
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:118)
 	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:71)
@@ -1263,30 +1092,15 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed
 	at io.digdag.cli.Server.main(Server.java:106)
 	at io.digdag.cli.Main.cli(Main.java:195)
 	at io.digdag.cli.Main.main(Main.java:83)
-Caused by: org.postgresql.util.PSQLException: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: org.postgresql.util.PSQLException: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at org.postgresql.Driver$ConnectThread.getResult(Driver.java:358)
 	at org.postgresql.Driver.connect(Driver.java:282)
 	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:95)
 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:316)
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:506)
 	... 68 more
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:607)
-	at org.postgresql.core.PGStream.<init>(PGStream.java:64)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:147)
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:55)
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:219)
-	at org.postgresql.Driver.makeConnection(Driver.java:407)
-	at org.postgresql.Driver.access$100(Driver.java:55)
-	at org.postgresql.Driver$ConnectThread.run(Driver.java:317)
-	at java.lang.Thread.run(Thread.java:748)
 
-20) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+20) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -1312,7 +1126,7 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
     for the 3rd parameter of io.digdag.core.agent.LocalAgentManager.<init>(LocalAgentManager.java:35)
   at io.digdag.core.agent.LocalAgentModule.configure(LocalAgentModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.agent.LocalAgentModule)
   while locating io.digdag.core.agent.LocalAgentManager
-Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:516)
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:118)
 	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:71)
@@ -1402,30 +1216,15 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed
 	at io.digdag.cli.Server.main(Server.java:106)
 	at io.digdag.cli.Main.cli(Main.java:195)
 	at io.digdag.cli.Main.main(Main.java:83)
-Caused by: org.postgresql.util.PSQLException: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: org.postgresql.util.PSQLException: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at org.postgresql.Driver$ConnectThread.getResult(Driver.java:358)
 	at org.postgresql.Driver.connect(Driver.java:282)
 	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:95)
 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:316)
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:506)
 	... 88 more
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:607)
-	at org.postgresql.core.PGStream.<init>(PGStream.java:64)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:147)
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:55)
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:219)
-	at org.postgresql.Driver.makeConnection(Driver.java:407)
-	at org.postgresql.Driver.access$100(Driver.java:55)
-	at org.postgresql.Driver$ConnectThread.run(Driver.java:317)
-	at java.lang.Thread.run(Thread.java:748)
 
-21) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+21) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -1438,10 +1237,10 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:36) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating io.digdag.core.repository.ProjectStoreManager
     for the 2nd parameter of io.digdag.core.LocalSite.<init>(LocalSite.java:39)
-  at io.digdag.core.DigdagEmbed$Bootstrap.lambda$standardModules$4(DigdagEmbed.java:212) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.DigdagEmbed$Bootstrap$$Lambda$35/1515833950)
+  at io.digdag.core.DigdagEmbed$Bootstrap.lambda$standardModules$4(DigdagEmbed.java:212) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.DigdagEmbed$Bootstrap$$Lambda$35/1721246982)
   while locating io.digdag.core.LocalSite
 Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException (same stack trace as error #16)
-22) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+22) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -1460,7 +1259,7 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException (same s
     for the 2nd parameter of io.digdag.core.queue.TaskQueueServerManager.<init>(TaskQueueServerManager.java:18)
   at io.digdag.core.queue.QueueModule.configure(QueueModule.java:19) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.queue.QueueModule)
   while locating io.digdag.core.queue.TaskQueueServerManager
-Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:516)
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:118)
 	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:71)
@@ -1533,30 +1332,15 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed
 	at io.digdag.cli.Server.main(Server.java:106)
 	at io.digdag.cli.Main.cli(Main.java:195)
 	at io.digdag.cli.Main.main(Main.java:83)
-Caused by: org.postgresql.util.PSQLException: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: org.postgresql.util.PSQLException: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at org.postgresql.Driver$ConnectThread.getResult(Driver.java:358)
 	at org.postgresql.Driver.connect(Driver.java:282)
 	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:95)
 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:316)
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:506)
 	... 71 more
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:607)
-	at org.postgresql.core.PGStream.<init>(PGStream.java:64)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:147)
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:55)
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:219)
-	at org.postgresql.Driver.makeConnection(Driver.java:407)
-	at org.postgresql.Driver.access$100(Driver.java:55)
-	at org.postgresql.Driver$ConnectThread.run(Driver.java:317)
-	at java.lang.Thread.run(Thread.java:748)
 
-23) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+23) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -1575,7 +1359,7 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
   at org.weakref.jmx.guice.GuiceMBeanExporter.<init>(GuiceMBeanExporter.java:34)
   at org.weakref.jmx.guice.MBeanModule.configure(MBeanModule.java:38) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.guice.rs.server.jmx.JmxModule -> org.weakref.jmx.guice.MBeanModule)
   while locating org.weakref.jmx.guice.GuiceMBeanExporter
-Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:516)
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:118)
 	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:71)
@@ -1649,30 +1433,15 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed
 	at io.digdag.cli.Server.main(Server.java:106)
 	at io.digdag.cli.Main.cli(Main.java:195)
 	at io.digdag.cli.Main.main(Main.java:83)
-Caused by: org.postgresql.util.PSQLException: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: org.postgresql.util.PSQLException: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at org.postgresql.Driver$ConnectThread.getResult(Driver.java:358)
 	at org.postgresql.Driver.connect(Driver.java:282)
 	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:95)
 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:316)
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:506)
 	... 72 more
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:607)
-	at org.postgresql.core.PGStream.<init>(PGStream.java:64)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:147)
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:55)
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:219)
-	at org.postgresql.Driver.makeConnection(Driver.java:407)
-	at org.postgresql.Driver.access$100(Driver.java:55)
-	at org.postgresql.Driver$ConnectThread.run(Driver.java:317)
-	at java.lang.Thread.run(Thread.java:748)
 
-24) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+24) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -1688,9 +1457,9 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
   at io.digdag.core.workflow.WorkflowExecutorModule.configure(WorkflowExecutorModule.java:14) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.workflow.WorkflowExecutorModule)
   while locating io.digdag.core.workflow.WorkflowExecutor
     for the 2nd parameter of io.digdag.server.WorkflowExecutorLoop.<init>(WorkflowExecutorLoop.java:41)
-  at io.digdag.server.ServerBootstrap.lambda$digdagBootstrap$1(ServerBootstrap.java:71) (via modules: com.google.inject.util.Modules$OverrideModule -> io.digdag.server.ServerBootstrap$$Lambda$30/1293680734)
+  at io.digdag.server.ServerBootstrap.lambda$digdagBootstrap$1(ServerBootstrap.java:71) (via modules: com.google.inject.util.Modules$OverrideModule -> io.digdag.server.ServerBootstrap$$Lambda$30/725680028)
   while locating io.digdag.server.WorkflowExecutorLoop
-Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:516)
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:118)
 	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:71)
@@ -1759,30 +1528,15 @@ Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed
 	at io.digdag.cli.Server.main(Server.java:106)
 	at io.digdag.cli.Main.cli(Main.java:195)
 	at io.digdag.cli.Main.main(Main.java:83)
-Caused by: org.postgresql.util.PSQLException: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: org.postgresql.util.PSQLException: FATAL: remaining connection slots are reserved for non-replication superuser connections
 	at org.postgresql.Driver$ConnectThread.getResult(Driver.java:358)
 	at org.postgresql.Driver.connect(Driver.java:282)
 	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:95)
 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:316)
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:506)
 	... 67 more
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:607)
-	at org.postgresql.core.PGStream.<init>(PGStream.java:64)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:147)
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:55)
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:219)
-	at org.postgresql.Driver.makeConnection(Driver.java:407)
-	at org.postgresql.Driver.access$100(Driver.java:55)
-	at org.postgresql.Driver$ConnectThread.run(Driver.java:317)
-	at java.lang.Thread.run(Thread.java:748)
 
-25) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to 192.168.49.2:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+25) Error in custom provider, com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: remaining connection slots are reserved for non-replication superuser connections
   while locating io.digdag.core.database.DataSourceProvider
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:30) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating javax.sql.DataSource
@@ -1795,7 +1549,7 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
   at io.digdag.core.database.DatabaseModule.configure(DatabaseModule.java:38) (via modules: com.google.inject.util.Modules$OverrideModule -> com.google.inject.util.Modules$OverrideModule -> io.digdag.core.database.DatabaseModule)
   while locating io.digdag.core.session.SessionStoreManager
     for the 2nd parameter of io.digdag.server.WorkflowExecutionTimeoutEnforcer.<init>(WorkflowExecutionTimeoutEnforcer.java:75)
-  at io.digdag.server.ServerBootstrap.lambda$digdagBootstrap$1(ServerBootstrap.java:72) (via modules: com.google.inject.util.Modules$OverrideModule -> io.digdag.server.ServerBootstrap$$Lambda$30/1293680734)
+  at io.digdag.server.ServerBootstrap.lambda$digdagBootstrap$1(ServerBootstrap.java:72) (via modules: com.google.inject.util.Modules$OverrideModule -> io.digdag.server.ServerBootstrap$$Lambda$30/725680028)
   while locating io.digdag.server.WorkflowExecutionTimeoutEnforcer
 Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException (same stack trace as error #16)
 25 errors (runtime)

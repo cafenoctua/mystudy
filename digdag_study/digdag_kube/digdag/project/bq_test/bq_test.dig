@@ -4,6 +4,3 @@ _export:
 
 +proc:
   bq>: query.sql
-
-+proc1:
-  sh>: bq query --nouse_legacy_sql <  query.sql
