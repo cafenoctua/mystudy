@@ -1,0 +1,15 @@
+name: output-file
+on: [push]
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    name: Save output
+    steps:
+      - shell: bash
+        run: |
+          expr 1 + 1 > output.log
+      - name: Upload output file
+        uses: actions/upload-artifact@v2
+        with:
+          name: output-log-file
+          path: output.log
