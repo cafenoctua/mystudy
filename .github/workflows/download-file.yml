@@ -1,4 +1,4 @@
-name: output-file
+name: download-file
 on: [push]
 jobs:
   example-job:
