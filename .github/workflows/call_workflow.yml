@@ -1,13 +1,11 @@
 name: Call a reusable workflow
 
-on:
-  pull_request:
-    branches:
-      - main
+on: [push]
 
 jobs:
 
   call-workflow-passing-data:
+    runs-on: ubuntu-latest
     uses: greatestgoat/mystudy/.github/workflows/workflow-B.yml@issue31
     with:
       username: mona
