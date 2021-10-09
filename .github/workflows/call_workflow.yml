@@ -8,7 +8,7 @@ on:
 jobs:
 
   call-workflow-passing-data:
-    uses: octo-org/example-repo/.github/workflows/workflow-B.yml@issue31
+    uses: greatestgoat/mystudy/.github/workflows/workflow-B.yml@issue31
     with:
       username: mona
     secrets:
