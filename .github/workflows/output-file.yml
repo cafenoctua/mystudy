@@ -1,5 +1,8 @@
 name: output-file
-on: [push]
+on:
+  push:
+      branches:
+        - main
 jobs:
   upload:
     runs-on: ubuntu-latest
