@@ -6,7 +6,7 @@ jobs:
 
   call-workflow-passing-data:
     runs-on: ubuntu-latest
-    uses: greatestgoat/mystudy/.github/workflows/workflow-B.yml@greatestgoat/issue31
+    uses: ./.github/workflows/workflow-B.yml@greatestgoat/issue31
     with:
       username: mona
     secrets:
