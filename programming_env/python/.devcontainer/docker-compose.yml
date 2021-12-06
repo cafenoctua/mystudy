@@ -1,0 +1,9 @@
+version: '3'
+services:
+  python:
+
+    volumes:
+      - ./project:/project:cached
+      
+    command: /bin/sh -c "while sleep 1000; do :; done"
+ 
