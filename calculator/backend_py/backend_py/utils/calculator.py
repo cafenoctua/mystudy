@@ -9,16 +9,18 @@ class BasicCalculator(object):
         return l * r
 
     def division(self, l, r):
-        if (r > 0):
+        try:
             return l / r
-        else:
-            raise "Can't division by 0"
+        except ZeroDivisionError:
+            print("Can't division by 0")
+            raise
     
     def quotient(self, l, r):
-        if (r > 0):
+        try:
             return l % r
-        else:
-            raise "Can't division by 0"
+        except ZeroDivisionError:
+            print("Can't division by 0")
+            raise
 
 class TypeCalculator(BasicCalculator):
     def add_int(self, l: int, r: int) -> int:
