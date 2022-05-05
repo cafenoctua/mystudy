@@ -1,8 +1,8 @@
 import pytest
-from calc_on_stremlit.utils.calculator import TypeClac
+from calc_on_stremlit.utils.calculator import TypeCalc
 
 class TestCalculation:
-    calc = TypeClac()
+    calc = TypeCalc()
 
     def test_add_int(self):
         assert self.calc.add_int(1, 1) == 2
