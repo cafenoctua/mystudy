@@ -10,9 +10,8 @@ class ControlPanel(object):
                 if st.button(num_element):
                     pushed_num = num_element
         return pushed_num
-    
+
     def base_panel(self) -> string:
-        
         # define panel elements
         cols = st.columns(4)
         num_elements_list = [

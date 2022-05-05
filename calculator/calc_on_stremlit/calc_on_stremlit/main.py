@@ -24,22 +24,64 @@ class Main(object):
 	
 	def calculation(self, formula_items: list, start: int = 0, end: int = 3, result = 0):
 		get_items = formula_items[start:end]
+		print(f"get_items: {get_items}")
 		if len(get_items) < 3:
 			if start == 0:
 				return formula_items[0]
 			else:
 				return result
 		else:
+			if '.' in get_items[0] or '.' in get_items[2]:
+				get_items[0] = float(get_items[0])
+				get_items[2] = float(get_items[2])
+			else:
+				get_items[0] = int(get_items[0])
+				get_items[2] = int(get_items[2])
+
 			if get_items[1] == '+':
-				if start == 0:
-					result = self.calc.add_int(int(get_items[0]), int(get_items[2]))
+				if type(get_items[0]) == float:
+					calc = self.calc.add_float
 				else:
-					self.calc.add_int(result, int(get_items[2]))
+					calc = self.calc.add_int
+
+				if start == 0:
+					result = calc(get_items[0], get_items[2])
+				else:
+					result = self.calc.add_int(result, get_items[2])
+
 			elif get_items[1] == '-':
-				if start == 0:
-					result = self.calc.diff_int(int(get_items[0]), int(get_items[2]))
+				if type(get_items[0]) == float:
+					calc = self.calc.diff_float
 				else:
-					self.calc.diff_int(result, int(get_items[2]))
+					calc = self.calc.diff_int
+
+				if start == 0:
+					result = calc(get_items[0], get_items[2])
+				else:
+					result = calc(result, get_items[2])
+
+			elif get_items[1] == 'x':
+				if type(get_items[0]) == float:
+					calc = self.calc.multipl_float
+				else:
+					calc = self.calc.multipl_int
+
+				if start == 0:
+					result = calc(get_items[0], get_items[2])
+				else:
+					result = calc(result, get_items[2])
+
+			elif get_items[1] == '/':
+				if type(get_items[0]) == float:
+					calc = self.calc.division_float
+				else:
+					calc = self.calc.division_int
+
+				if start == 0:
+					result = calc(get_items[0], get_items[2])
+				else:
+					result = calc(result, get_items[2])
+
 			self.calculation(formula_items, start + 2, end + 2, result)
 		return result
 
