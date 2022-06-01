@@ -1,5 +1,4 @@
 import string
-from turtle import pu
 import streamlit as st
 
 class ControlPanel(object):
@@ -27,6 +26,4 @@ class ControlPanel(object):
             num = self.base_panel_elements(col, num_elements)
             if num != "":
                 pushed_num = num
-        # if pushed_num != "":
         return pushed_num
-        # return None
