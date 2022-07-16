@@ -22,5 +22,14 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(disposable);
 }
 
+const configPrefix = "bigquery";
+function readConfig(): vscode.workspace.WorkspaceConfiguration {
+	try {
+	  return vscode.workspace.getConfiguration(configPrefix);
+	} catch (e) {
+	  vscode.window.showErrorMessage(`failed to read config: ${e}`);
+	}
+  }
+
 // this method is called when your extension is deactivated
 export function deactivate() {}

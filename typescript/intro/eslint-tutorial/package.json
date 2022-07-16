@@ -1,0 +1,7 @@
+{
+    "name": "eslint-tutorial",
+    "license": "UNLICENSED",
+    "devDependencies": {
+        "eslint": "^8"
+    }
+}
