@@ -1,0 +1,41 @@
+{
+  "name": "cgs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./bin/index.js",
+  "bin": {
+    "cgs": "./bin/index.js"
+  },
+  "scripts": {
+    "start": "npm run build && npm run global",
+    "build": "npm run clean:some && tsc -p .",
+    "global": "npm i -g && cgs",
+    "clean:some": "rm -rf ./lib ./docs",
+    "clean:all": "rm -rf ./node_modules ./package-lock.json ./lib ./docs",
+    "refresh": "npm run clean:all && npm install",
+    "tscov": "tscov --min-coverage 90",
+    "tscov:d": "tscov --details",
+    "publish-package": "npm run build && npm publish",
+    "docs": "typedoc --out docs ./src"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "figlet": "^1.5.2",
+    "fs-extra": "^10.1.0",
+    "inquirer": "^9.0.1",
+    "inversify": "^6.0.1",
+    "kleur": "^4.1.5",
+    "reflect-metadata": "^0.1.13",
+    "tslib": "^2.4.0"
+  },
+  "devDependencies": {
+    "@liftr/tscov": "^2.0.0",
+    "@types/figlet": "^1.5.4",
+    "@types/inquirer": "^8.2.1",
+    "@types/node": "^18.0.5",
+    "ts-node": "^10.9.1",
+    "typedoc": "^0.23.7",
+    "typescript": "^4.7.4"
+  }
+}
