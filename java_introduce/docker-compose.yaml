@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  openjdk:
+    build: .
+    volumes:
+      - ./work:/work
