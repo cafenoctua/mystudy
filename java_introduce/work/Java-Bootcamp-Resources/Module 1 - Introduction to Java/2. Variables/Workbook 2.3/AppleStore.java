@@ -17,9 +17,9 @@ public class AppleStore {
         System.out.println("Another customer walked in. She bought 200 apples!");
         
 
-        System.out.println("Wow! So far, you made: $<profit>");
-        System.out.println("<number of customers> + customers love your apples.");
-        System.out.println("You have <number of apples> apples left.");
+        System.out.println("Wow! So far, you made: " + (40 * (4 + 20 + 200)));
+        System.out.println(3 + " customers love your apples.");
+        System.out.println("You have " +224 + " apples left.");
 
         // Compare your result to what's on Learn the Part.  
         
