@@ -1,0 +1,20 @@
+{
+    "name": "dbt_ga4",
+    "build": {
+        "dockerfile": "../Dockerfile"
+    },
+    "workspaceFolder": "/workspaces/mystudy/dbt_ga4",
+    "mounts": [
+        "source=${localEnv:HOME}/.config/gcloud/application_default_credentials.json,target=/home/root/.gcloud/application_default_credentials.json,type=bind,consistency=cached"
+    ],
+    "forwardPorts": [8080],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "innoverio.vscode-dbt-power-user",
+                "yzhang.markdown-all-in-one"
+            ]
+        }
+    },
+    "remoteUser": "root"
+}
