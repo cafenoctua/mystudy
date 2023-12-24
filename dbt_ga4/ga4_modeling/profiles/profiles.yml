@@ -1,0 +1,13 @@
+ga4_modeling:
+  outputs:
+    dev:
+      dataset: ga4_modeling
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: US
+      method: oauth
+      priority: interactive
+      project: sweepsump
+      threads: 4
+      type: bigquery
+  target: dev

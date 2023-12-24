@@ -5,7 +5,7 @@
     },
     "workspaceFolder": "/workspaces/mystudy/dbt_ga4",
     "mounts": [
-        "source=${localEnv:HOME}/.config/gcloud/application_default_credentials.json,target=/home/root/.gcloud/application_default_credentials.json,type=bind,consistency=cached"
+        "source=${localEnv:HOME}/.config/gcloud/,target=/home/root/.gcloud/,type=bind,consistency=cached"
     ],
     "forwardPorts": [8080],
     "customizations": {
@@ -16,5 +16,12 @@
             ]
         }
     },
-    "remoteUser": "root"
+    "containerEnv": {
+        "DBT_PROFILES_DIR": "/workspaces/mystudy/dbt_ga4/ga4_modeling/profiles"
+    },
+    "remoteUser": "root",
+	"remoteEnv": {
+		"CLOUDSDK_CONFIG": "/home/root/.gcloud"
+	},
+    "postStartCommand": "make dbt_deps"
 }
