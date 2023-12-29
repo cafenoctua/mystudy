@@ -12,7 +12,8 @@
         "vscode": {
             "extensions": [
                 "innoverio.vscode-dbt-power-user",
-                "yzhang.markdown-all-in-one"
+                "yzhang.markdown-all-in-one",
+                "Fivetran.dbt-language-server"
             ]
         }
     },
