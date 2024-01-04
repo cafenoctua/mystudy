@@ -7,13 +7,14 @@
     "mounts": [
         "source=${localEnv:HOME}/.config/gcloud/,target=/home/root/.gcloud/,type=bind,consistency=cached"
     ],
-    "forwardPorts": [8080],
+    "settings": {
+      "terminal.integrated.defaultProfile.linux": "bash",
+    },
+    "forwardPorts": [8080, 8080],
     "customizations": {
         "vscode": {
             "extensions": [
-                "innoverio.vscode-dbt-power-user",
-                "yzhang.markdown-all-in-one",
-                "Fivetran.dbt-language-server"
+                "innoverio.vscode-dbt-power-user"
             ]
         }
     },

@@ -1,7 +1,0 @@
-[0m06:17:18  Running with dbt=1.7.4
-[0m06:17:19  Registered adapter: bigquery=1.7.2
-[0m06:17:19  Encountered an error:
-Parsing Error
-  Error reading ga4_modeling: raw/_raw__sources.yml - Runtime Error
-    unacceptable character #x001b: control characters are not allowed
-      in "<unicode string>", position 155

@@ -1,4 +1,6 @@
-FROM python:3.11.7
+# FROM python:3.11.7
+# FROM python:3.8.12-slim-buster
+FROM python:3.10.13-slim-bullseye
 
 RUN apt-get update -y \
     && apt-get upgrade -y \
