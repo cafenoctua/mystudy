@@ -10,6 +10,7 @@ import_stg as (
 
 get_daily_values as (
   select
+    date(event_timestamp) date,
     user_id,
     created_at,
     platform,
@@ -22,20 +23,11 @@ get_daily_values as (
     max(event_timestamp) as updated_at
   from
     import_stg
-  group by 1, 2, 3, 4, 5, 6, 7, 8, 9
+  group by 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 )
 
 select 
   {{ dbt_utils.generate_surrogate_key(['user_id', 'created_at', 'updated_at']) }} as user_key,
-  user_id,
-  created_at,
-  platform,
-  category,
-  mobile_brand_name,
-  mobile_model_name,
-  operating_system,
-  operating_system_version,
-  device_language,
-  updated_at
+  *
 from
   get_daily_values
