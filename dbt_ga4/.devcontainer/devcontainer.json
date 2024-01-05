@@ -1,0 +1,34 @@
+{
+    "name": "dbt_ga4",
+    "build": {
+        "dockerfile": "../Dockerfile"
+    },
+    "workspaceFolder": "/workspaces/mystudy/dbt_ga4",
+    "mounts": [
+        "source=${localEnv:HOME}/.config/gcloud/,target=/home/root/.gcloud/,type=bind,consistency=cached"
+    ],
+    "settings": {
+      "terminal.integrated.defaultProfile.linux": "bash",
+    },
+    "forwardPorts": [8080, 8080],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "innoverio.vscode-dbt-power-user",
+                "Fivetran.dbt-language-server",
+                "mhutchie.git-graph",
+                "donjayamanne.githistory",
+                "eamodio.gitlens",
+                "yzhang.markdown-all-in-one"
+            ]
+        }
+    },
+    "containerEnv": {
+        "DBT_PROFILES_DIR": "/workspaces/mystudy/dbt_ga4/ga4_modeling/profiles"
+    },
+    "remoteUser": "root",
+	"remoteEnv": {
+		"CLOUDSDK_CONFIG": "/home/root/.gcloud"
+	},
+    "postStartCommand": "make dbt_deps"
+}
