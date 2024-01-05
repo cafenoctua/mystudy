@@ -10,6 +10,7 @@ import_stg as (
 
 get_daily_values as (
   select
+    date(event_timestamp) date,
     geo.continent,
     geo.sub_continent,
     geo.country,
@@ -18,16 +19,11 @@ get_daily_values as (
     max(event_timestamp) as updated_at
   from
     import_stg
-  group by 1, 2, 3, 4, 5
+  group by 1, 2, 3, 4, 5, 6
 )
 
 select 
   {{ dbt_utils.generate_surrogate_key(['continent','sub_continent','country','region','city','updated_at']) }} as country_key,
-  continent,
-  sub_continent,
-  country,
-  region,
-  city,
-  updated_at
+  *
 from
   get_daily_values
