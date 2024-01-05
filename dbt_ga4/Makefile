@@ -17,6 +17,11 @@ dbt_run_force:
 	dbt snapshot --vars '{gcp_project: ${GCP_PROJECT}, date: ${DATE}}' ; \
 	dbt run -fs dimensions+ fct_scd__access --vars '{gcp_project: ${GCP_PROJECT}, date: ${DATE}}'
 
+.PHONY: dbt_snapshot
+dbt_snapshot:
+	cd ga4_modeling ; \
+	dbt snapshot --vars '{gcp_project: ${GCP_PROJECT}, date: ${DATE}}' ; \
+
 .PHONY: dbt_build
 dbt_build:
 	cd ga4_modeling ; \
