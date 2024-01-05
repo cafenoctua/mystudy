@@ -14,7 +14,12 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "innoverio.vscode-dbt-power-user"
+                "innoverio.vscode-dbt-power-user",
+                "Fivetran.dbt-language-server",
+                "mhutchie.git-graph",
+                "donjayamanne.githistory",
+                "eamodio.gitlens",
+                "yzhang.markdown-all-in-one"
             ]
         }
     },

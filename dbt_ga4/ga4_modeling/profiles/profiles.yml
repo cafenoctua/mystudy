@@ -7,7 +7,7 @@ ga4_modeling:
       location: US
       method: oauth
       priority: interactive
-      project: sweepsump
+      project: "{{ var('gcp_project') }}"
       threads: 4
       type: bigquery
   target: dev

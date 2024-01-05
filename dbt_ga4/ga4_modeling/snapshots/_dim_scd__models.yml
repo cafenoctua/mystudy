@@ -1,0 +1,4 @@
+version: 2
+models:
+  - name: dim_scd__users
+  - name: dim_scd__countries

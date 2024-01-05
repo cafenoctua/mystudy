@@ -1,0 +1,11 @@
+version: 2
+models:
+  - name: stg__events
+    config:
+      materialized: incremental
+      incremental_strategy: insert_overwrite
+      on_schema_change: fail
+      partition_by:
+        field: event_timestamp
+        data_type: timestamp
+        granularity: day

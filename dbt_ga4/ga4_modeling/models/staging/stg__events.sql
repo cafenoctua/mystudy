@@ -4,15 +4,13 @@ source as (
 ),
 renamed as (
   select
-    event_timestamp,
+    timestamp_micros(event_timestamp) as event_timestamp,
     event_name,
-    user_id,
-    user_pseudo_id,
-    user_first_touch_timestamp,
+    user_pseudo_id as user_id,
+    timestamp_micros(user_first_touch_timestamp) as created_at,
     platform,
     device,
-    geo,
-    app_info
+    geo
   from
     source
 )

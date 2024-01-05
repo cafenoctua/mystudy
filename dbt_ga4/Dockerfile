@@ -1,27 +1,21 @@
-# FROM python:3.11.7
-# FROM python:3.8.12-slim-buster
 FROM python:3.10.13-slim-bullseye
 
+# Set python environment variables
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONF8=1 \
+    PIP_NO_CACHE_DIR=off
+
+# Update OS and install software
 RUN apt-get update -y \
     && apt-get upgrade -y \
-    && apt-get autoremove -y
+    && python -m pip install --upgrade pip
 
-# install neccesary libraries
-RUN apt-get install -y gettext \
-    libcurl4-gnutls-dev \
-    libexpat1-dev \
-    libghc-zlib-dev \
-    libssl-dev \
-    make \
-    wget
-    
-# compile git
-RUN wget https://github.com/git/git/archive/v2.30.0.tar.gz \
-    && tar -xzf v2.30.0.tar.gz \
-    && cd git-* \
-    && make prefix=/usr/local all \
-    && make prefix=/usr/local install
+RUN apt-get install -y git
+RUN apt-get install -y make
+RUN apt-get update -y \
+    && apt install -y gcc
 
 COPY ./requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt
 RUN rm /tmp/requirements.txt
+COPY .bashrc /root/
