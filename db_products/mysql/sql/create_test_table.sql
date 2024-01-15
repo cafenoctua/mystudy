@@ -1,0 +1,1 @@
+create table if not exists work.test (id int, name varchar(10));
