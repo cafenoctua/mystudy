@@ -1,0 +1,32 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
+{
+	"name": "Existing Dockerfile",
+	"workspaceFolder": "/workspaces/mystudy/datavault/datavault_test",
+	"build": {
+		// Sets the run context to one level up instead of the .devcontainer folder.
+		"context": "..",
+		// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+		"dockerfile": "../Dockerfile.d/Dockerfile"
+	},
+	"mounts": [
+		"source=${localEnv:HOME}/.config/gcloud,target=/home/root/.gcloud/,type=bind,consistency=cached"
+	],
+	"forwardPorts": [8080, 8080],
+	"containerEnv": {
+		"DBT_PROFILES_DIR": "/workspaces/mystudy/datavault/datavault_test/profiles"
+	},
+	"remoteUser": "root",
+	"remoteEnv": {
+		"CLOUDSDK_CONFIG": "/home/root/.gcloud"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"HoliduGmbh.vscode-dbt-power-user-holidu",
+				"Fivetran.dbt-language-server",
+				"henriblancke.vscode-dbt-formatter"
+			]
+		}
+	}
+}
